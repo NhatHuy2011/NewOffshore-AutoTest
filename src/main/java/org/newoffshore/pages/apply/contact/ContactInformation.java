@@ -41,7 +41,7 @@ public class ContactInformation {
         driver.findElement(nextButton).click();
     }
 
-    public void runContact() throws InterruptedException {
+    public void runContact() {
         ContactInformation contactInformationPage = new ContactInformation(driver);
 
         contactInformationPage.setFullnameInput("Nhat Huy");
