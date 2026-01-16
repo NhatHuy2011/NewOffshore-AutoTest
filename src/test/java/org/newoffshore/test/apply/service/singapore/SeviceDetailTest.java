@@ -3,7 +3,7 @@ package org.newoffshore.test.apply.service.singapore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.newoffshore.pages.apply.service.singapore.FormCompany;
+import org.newoffshore.pages.apply.service.singapore.ServiceDetail;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -31,27 +31,25 @@ public class SeviceDetailTest {
 
     @Test
     public void selectIncorpForLocal() throws InterruptedException {
-        FormCompany formCompany = new FormCompany(driver);
-        formCompany.selectGroupFormACompany();
+        ServiceDetail serviceDetail = new ServiceDetail(driver);
+        serviceDetail.selectGroupFormACompany();
 
-        formCompany.selectButton("yes_local_director_for_incorporation");
-//        formCompany.clickSingaporeApplyNextButton();
-//        Thread.sleep(1000);
+        serviceDetail.selectButton("yes_local_director_for_incorporation");
+        //serviceDetail.selectButton("singapore-apply-form-next");
     }
 
     @Test
     public void selectNoLocalDirector() throws InterruptedException {
-        FormCompany formCompany = new FormCompany(driver);
-        formCompany.selectGroupFormACompany();
+        ServiceDetail serviceDetail = new ServiceDetail(driver);
+        serviceDetail.selectGroupFormACompany();
 
-        formCompany.selectButton("no_local_director_for_incorporation");
-        formCompany.clickSingaporeApplyNextButton();
-        formCompany.selectButton("yes_2_foreign_directors");
-        formCompany.clickSingaporeApplyNextButton();
-        formCompany.selectButton("standard_compliance");
-        formCompany.selectButton("51_200");
-//        formCompany.clickSingaporeApplyNextButton();
-//        Thread.sleep(1000);
+        serviceDetail.selectButton("no_local_director_for_incorporation");
+        serviceDetail.selectButton("singapore-apply-form-next");
+        serviceDetail.selectButton("yes_2_foreign_directors");
+        serviceDetail.selectButton("singapore-apply-form-next");
+        serviceDetail.selectButton("standard_compliance");
+        serviceDetail.selectButton("51_200");
+        //serviceDetail.selectButton("singapore-apply-form-next");
     }
 
     @AfterEach
