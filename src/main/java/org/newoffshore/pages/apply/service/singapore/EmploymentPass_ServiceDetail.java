@@ -3,10 +3,10 @@ package org.newoffshore.pages.apply.service.singapore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class EmploymentPass {
+public class EmploymentPass_ServiceDetail {
     private final WebDriver driver;
 
-    public EmploymentPass(WebDriver driver) {
+    public EmploymentPass_ServiceDetail(WebDriver driver) {
         this.driver = driver;
     }
 

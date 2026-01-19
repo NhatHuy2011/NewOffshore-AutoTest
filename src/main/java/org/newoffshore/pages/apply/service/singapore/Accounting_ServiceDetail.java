@@ -3,10 +3,10 @@ package org.newoffshore.pages.apply.service.singapore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class BusinessBanking {
+public class Accounting_ServiceDetail {
     private final WebDriver driver;
 
-    public BusinessBanking(WebDriver driver) {
+    public Accounting_ServiceDetail(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -14,10 +14,9 @@ public class BusinessBanking {
         driver.findElement(By.id(id)).click();
     }
 
-    public void selectBusinessBanking(){
-        selectButton("digital");
-        selectButton("traditional");
-        selectButton("payment_gateway");
+    public void selectAccouting() {
+        selectButton("standard_compliance");
+        selectButton("51_200");
         selectButton("singapore-apply-form-next");
     }
 }

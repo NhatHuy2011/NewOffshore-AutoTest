@@ -3,28 +3,26 @@ package org.newoffshore.pages.apply.service.singapore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NomineeDirectorship {
+public class FormACompany_ServiceDetail {
     private final WebDriver driver;
 
-    public NomineeDirectorship(WebDriver driver) {
+    public FormACompany_ServiceDetail(WebDriver driver) {
         this.driver = driver;
     }
-
-    private final By okTermButton = By.xpath("//button[normalize-space() = 'OK']");
 
     public void selectButton(String id){
         driver.findElement(By.id(id)).click();
     }
 
-    public void selectTerm(){
-        driver.findElement(okTermButton).click();
+    public void selectIncorp_For_Local(){
+        selectButton("yes_local_director_for_incorporation");
+        selectButton("singapore-apply-form-next");
     }
 
-    public void selectNomineeDirectorship(){
-        selectTerm();
-        selectButton("physical_bank_visit");
-        selectButton("sing_pass_auth");
-        selectButton("nominee_director_signature");
+    public void selectIncorp_For_NoLocal(){
+        selectButton("no_local_director_for_incorporation");
+        selectButton("singapore-apply-form-next");
+        selectButton("yes_2_foreign_directors");
         selectButton("singapore-apply-form-next");
         selectButton("standard_compliance");
         selectButton("51_200");

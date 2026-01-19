@@ -3,7 +3,7 @@ package org.newoffshore.test.apply.service.singapore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.newoffshore.pages.apply.contact.ContactInformation;
+import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
 import org.newoffshore.pages.apply.service.singapore.*;
 import org.newoffshore.utils.ConfigReader;
@@ -36,7 +36,7 @@ public class SeviceDetailTest {
     public void selectIncorp_For_Local() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -47,15 +47,15 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupFormACompany();
 
-        FormACompany formACompany = new FormACompany(driver);
-        formACompany.selectIncorp_For_Local();
+        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        formACompanyServiceDetail.selectIncorp_For_Local();
     }
 
     @Test
     public void selectIncorp_For_NoLocal() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -66,8 +66,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupFormACompany();
 
-        FormACompany formACompany = new FormACompany(driver);
-        formACompany.selectIncorp_For_NoLocal();
+        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        formACompanyServiceDetail.selectIncorp_For_NoLocal();
     }
 
     //Company Management Transfer
@@ -75,7 +75,7 @@ public class SeviceDetailTest {
     public void selectTransfer_For_Local_NoAccounting(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -86,15 +86,15 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
-        companyManagementTransfer.selectTransfer_For_Local_NoAccounting();
+        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        companyManagementTransferServiceDetail.selectTransfer_For_Local_NoAccounting();
     }
 
     @Test
     public void selectTransfer_For_Local_HasAccounting() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -105,15 +105,15 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
-        companyManagementTransfer.selectTransfer_For_Local_HasAccounting();
+        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        companyManagementTransferServiceDetail.selectTransfer_For_Local_HasAccounting();
     }
 
     @Test
     public void selectTransfer_For_NoLocal(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -124,8 +124,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
-        companyManagementTransfer.selectTransfer_For_NoLocal();
+        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        companyManagementTransferServiceDetail.selectTransfer_For_NoLocal();
     }
 
     //Company Maintenance
@@ -133,7 +133,7 @@ public class SeviceDetailTest {
     public void selectMaintain_For_Local_NoAccounting(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -144,8 +144,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCompanyMaintainance();
 
-        CompanyMaintenance companyMaintenance = new CompanyMaintenance(driver);
-        companyMaintenance.selectMaintain_For_Local_NoAccounting();
+        CompanyMaintenance_ServiceDetail companyMaintenanceServiceDetail = new CompanyMaintenance_ServiceDetail(driver);
+        companyMaintenanceServiceDetail.selectMaintain_For_Local_NoAccounting();
     }
 
     //Nominee Directorship
@@ -153,7 +153,7 @@ public class SeviceDetailTest {
     public void selectNomineeDirectorship(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -164,8 +164,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupNomineeDirectorship();
 
-        NomineeDirectorship nomineeDirectorship = new NomineeDirectorship(driver);
-        nomineeDirectorship.selectNomineeDirectorship();
+        NomineeDirectorship_ServiceDetail nomineeDirectorshipServiceDetail = new NomineeDirectorship_ServiceDetail(driver);
+        nomineeDirectorshipServiceDetail.selectNomineeDirectorship();
     }
 
     //Accounting
@@ -173,7 +173,7 @@ public class SeviceDetailTest {
     public void selectAccouting(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -184,8 +184,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupAccounting();
 
-        Accounting accounting = new Accounting(driver);
-        accounting.selectAccouting();
+        Accounting_ServiceDetail accountingServiceDetail = new Accounting_ServiceDetail(driver);
+        accountingServiceDetail.selectAccouting();
     }
 
     //Business Banking
@@ -193,7 +193,7 @@ public class SeviceDetailTest {
     public void selectBusinessBanking(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -204,8 +204,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupBusinessBank();
 
-        BusinessBanking businessBanking = new BusinessBanking(driver);
-        businessBanking.selectBusinessBanking();
+        BusinessBanking_ServiceDetail businessBankingServiceDetail = new BusinessBanking_ServiceDetail(driver);
+        businessBankingServiceDetail.selectBusinessBanking();
     }
 
     //Employment Pass
@@ -213,7 +213,7 @@ public class SeviceDetailTest {
     public void selectEmploymentPass(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -224,15 +224,15 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupEmploymentPass();
 
-        EmploymentPass employmentPass = new EmploymentPass(driver);
-        employmentPass.selectEmploymentPass();
+        EmploymentPass_ServiceDetail employmentPassServiceDetail = new EmploymentPass_ServiceDetail(driver);
+        employmentPassServiceDetail.selectEmploymentPass();
     }
 
     @Test
     public void selectDependantPass(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -243,8 +243,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupEmploymentPass();
 
-        EmploymentPass employmentPass = new EmploymentPass(driver);
-        employmentPass.selectDependantPass();
+        EmploymentPass_ServiceDetail employmentPassServiceDetail = new EmploymentPass_ServiceDetail(driver);
+        employmentPassServiceDetail.selectDependantPass();
     }
 
     //Commercial Contract
@@ -252,7 +252,7 @@ public class SeviceDetailTest {
     public void selectCommercialContract_Custom(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -263,15 +263,15 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCommercialContract();
 
-        CommercialContract commercialContract = new CommercialContract(driver);
-        commercialContract.selectCommercialContract_Custom();
+        CommercialContract_ServiceDetail commercialContractServiceDetail = new CommercialContract_ServiceDetail(driver);
+        commercialContractServiceDetail.selectCommercialContract_Custom();
     }
 
     @Test
     public void selectCommercialContract_Templates(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.runContact();
+        contactInformationPage.fillContactInformation();
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
@@ -282,8 +282,8 @@ public class SeviceDetailTest {
         GroupOfService groupOfService = new GroupOfService(driver);
         groupOfService.selectGroupCommercialContract();
 
-        CommercialContract commercialContract = new CommercialContract(driver);
-        commercialContract.selectCommercialContract_Templates();
+        CommercialContract_ServiceDetail commercialContractServiceDetail = new CommercialContract_ServiceDetail(driver);
+        commercialContractServiceDetail.selectCommercialContract_Templates();
     }
 
     @AfterEach

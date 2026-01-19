@@ -1,9 +1,9 @@
-package org.newoffshore.test.apply.contact;
+package org.newoffshore.test.apply.contact_information;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.newoffshore.pages.apply.contact.ContactInformation;
+import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;

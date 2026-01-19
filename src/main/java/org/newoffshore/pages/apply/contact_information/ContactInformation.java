@@ -1,4 +1,4 @@
-package org.newoffshore.pages.apply.contact;
+package org.newoffshore.pages.apply.contact_information;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -41,7 +41,7 @@ public class ContactInformation {
         driver.findElement(nextButton).click();
     }
 
-    public void runContact() {
+    public void fillContactInformation() {
         ContactInformation contactInformationPage = new ContactInformation(driver);
 
         contactInformationPage.setFullnameInput("Nhat Huy");
