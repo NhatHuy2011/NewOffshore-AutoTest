@@ -3,7 +3,9 @@ package org.newoffshore.test.apply.service.singapore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.newoffshore.pages.apply.service.singapore.ServiceDetail;
+import org.newoffshore.pages.apply.contact.ContactInformation;
+import org.newoffshore.pages.apply.service.SpeakAndCheckout;
+import org.newoffshore.pages.apply.service.singapore.*;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -32,183 +34,256 @@ public class SeviceDetailTest {
     //Form A Company
     @Test
     public void selectIncorp_For_Local() {
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupFormACompany();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("yes_local_director_for_incorporation");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupFormACompany();
+
+        FormACompany formACompany = new FormACompany(driver);
+        formACompany.selectIncorp_For_Local();
     }
 
     @Test
     public void selectIncorp_For_NoLocal() {
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupFormACompany();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("no_local_director_for_incorporation");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("yes_2_foreign_directors");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("standard_compliance");
-        serviceDetail.selectButton("51_200");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupFormACompany();
+
+        FormACompany formACompany = new FormACompany(driver);
+        formACompany.selectIncorp_For_NoLocal();
     }
 
     //Company Management Transfer
     @Test
     public void selectTransfer_For_Local_NoAccounting(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCompanyManagementTransfer();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("yes_local_director_for_switch");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("no_use_accounting_service");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCompanyManagementTransfer();
+
+        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
+        companyManagementTransfer.selectTransfer_For_Local_NoAccounting();
     }
 
     @Test
     public void selectTransfer_For_Local_HasAccounting() {
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCompanyManagementTransfer();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("yes_local_director_for_switch");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("yes_use_accounting_service");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("standard_compliance");
-        serviceDetail.selectButton("51_200");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCompanyManagementTransfer();
+
+        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
+        companyManagementTransfer.selectTransfer_For_Local_HasAccounting();
     }
 
     @Test
     public void selectTransfer_For_NoLocal(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCompanyManagementTransfer();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("no_local_director_for_switch");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("1_foreign_director");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("switch_1_director_2_shareholder");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("standard_compliance");
-        serviceDetail.selectButton("51_200");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCompanyManagementTransfer();
+
+        CompanyManagementTransfer companyManagementTransfer = new CompanyManagementTransfer(driver);
+        companyManagementTransfer.selectTransfer_For_NoLocal();
     }
 
     //Company Maintenance
     @Test
     public void selectMaintain_For_Local_NoAccounting(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCompanyMaintainance();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("yes_local_director_for_renew");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("appointment_director");
-        serviceDetail.selectButton("resignation_director");
-        serviceDetail.selectButton("appointment_auditor");
-        serviceDetail.selectButton("resignation_auditor");
-        serviceDetail.selectButton("update_director_shareholder_information");
-        serviceDetail.selectButton("change_business_activity");
-        serviceDetail.selectButton("change_company_name");
-        serviceDetail.selectButton("change_office_address");
-        serviceDetail.selectButton("increase_share_capital");
-        serviceDetail.selectButton("transfer_shares");
-        serviceDetail.selectButton("extra_kyc_requirement");
-        serviceDetail.selectButton("custom_request");
-        serviceDetail.sendKeyCustomRequestMaintain("Test");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("close_company");
-        serviceDetail.selectCancel();
-        serviceDetail.selectButton("restore_company");
-        serviceDetail.selectCancel();
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCompanyMaintainance();
+
+        CompanyMaintenance companyMaintenance = new CompanyMaintenance(driver);
+        companyMaintenance.selectMaintain_For_Local_NoAccounting();
     }
 
     //Nominee Directorship
     @Test
     public void selectNomineeDirectorship(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupNomineeDirectorship();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("physical_bank_visit");
-        serviceDetail.selectButton("sing_pass_auth");
-        serviceDetail.selectButton("nominee_director_signature");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("standard_compliance");
-        serviceDetail.selectButton("51_200");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupNomineeDirectorship();
+
+        NomineeDirectorship nomineeDirectorship = new NomineeDirectorship(driver);
+        nomineeDirectorship.selectNomineeDirectorship();
     }
 
     //Accounting
     @Test
     public void selectAccouting(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupAccounting();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("standard_compliance");
-        serviceDetail.selectButton("51_200");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupAccounting();
+
+        Accounting accounting = new Accounting(driver);
+        accounting.selectAccouting();
     }
 
     //Business Banking
     @Test
     public void selectBusinessBanking(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupBusinessBank();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("digital");
-        serviceDetail.selectButton("traditional");
-        serviceDetail.selectButton("payment_gateway");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupBusinessBank();
+
+        BusinessBanking businessBanking = new BusinessBanking(driver);
+        businessBanking.selectBusinessBanking();
     }
 
     //Employment Pass
     @Test
     public void selectEmploymentPass(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupEmploymentPass();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("employment_pass_for_owner_company");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("rmi_degree_verification");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupEmploymentPass();
+
+        EmploymentPass employmentPass = new EmploymentPass(driver);
+        employmentPass.selectEmploymentPass();
     }
 
     @Test
     public void selectDependantPass(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupEmploymentPass();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("dependent_pass_for_family_bundle");
-        serviceDetail.selectCancel();
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupEmploymentPass();
+
+        EmploymentPass employmentPass = new EmploymentPass(driver);
+        employmentPass.selectDependantPass();
     }
 
     //Commercial Contract
     @Test
-    public void selectCommercialContract_Custom() throws InterruptedException {
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCommercialContract();
+    public void selectCommercialContract_Custom(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("drafting_and_review_custom_contract");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectOptionContractCustom();
-        serviceDetail.sendKeyContractCustom("Test");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCommercialContract();
+
+        CommercialContract commercialContract = new CommercialContract(driver);
+        commercialContract.selectCommercialContract_Custom();
     }
 
     @Test
     public void selectCommercialContract_Templates(){
-        ServiceDetail serviceDetail = new ServiceDetail(driver);
-        serviceDetail.selectGroupCommercialContract();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.runContact();
 
-        serviceDetail.selectButton("specific_commercial_contract_templates");
-        serviceDetail.selectButton("singapore-apply-form-next");
-        serviceDetail.selectButton("sales_purchase_agreement");
-        serviceDetail.selectButton("distribution_reseller_agreement");
-        serviceDetail.selectButton("supply_agreement");
-        serviceDetail.selectButton("agency_agreement");
-        serviceDetail.selectButton("singapore-apply-form-next");
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOutButton();
+        speakAndCheckout.selectNextButton();
+
+        //Select Group Of Service
+        GroupOfService groupOfService = new GroupOfService(driver);
+        groupOfService.selectGroupCommercialContract();
+
+        CommercialContract commercialContract = new CommercialContract(driver);
+        commercialContract.selectCommercialContract_Templates();
     }
 
     @AfterEach
