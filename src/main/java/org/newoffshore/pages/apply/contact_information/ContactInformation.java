@@ -45,7 +45,7 @@ public class ContactInformation {
         ContactInformation contactInformationPage = new ContactInformation(driver);
 
         contactInformationPage.setFullnameInput("Nhat Huy");
-        contactInformationPage.setEmailInput("nhathuy20110408@gmail.com");
+        contactInformationPage.setEmailInput("huydt0408@gmail.com");
         contactInformationPage.setPhoneInput(2015550123);
         contactInformationPage.setBusinessDescription("Tourism");
         contactInformationPage.clickNext();

@@ -21,8 +21,9 @@ public class ConfigReader {
         return properties.getProperty("url");
     }
 
-    public static String getUrlOffer(){
-        return properties.getProperty("url_offer");
+    public static String getUrlOffer(String country){
+        String urlOffer = properties.getProperty("url_offer");
+        return urlOffer.replace("{country}", country);
     }
 
     public static String getCookiesAccessTọkenName(){

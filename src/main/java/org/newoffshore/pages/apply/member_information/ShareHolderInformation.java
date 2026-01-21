@@ -1,12 +1,12 @@
-package org.newoffshore.pages.apply.member_information.singapore;
+package org.newoffshore.pages.apply.member_information;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FormACompany_ShareHolderInformation {
+public class ShareHolderInformation {
     private final WebDriver driver;
 
-    public FormACompany_ShareHolderInformation(WebDriver driver) {
+    public ShareHolderInformation(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -73,8 +73,11 @@ public class FormACompany_ShareHolderInformation {
         sendKeyEmailshareholder("huydt04082003@gmail.com");
         sendKeyPhoneNumbershareholder("201-555-0123");
         sendKeyShare(10000);
+        Thread.sleep(1000);
         sendKeyPassportUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        Thread.sleep(1000);
         sendKeyAddressProofUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        Thread.sleep(1000);
         sendKeySelfieImageUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
         Thread.sleep(1000);
         selectNextButton();

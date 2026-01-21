@@ -1,8 +1,9 @@
-package org.newoffshore.test.apply.service.singapore;
+package org.newoffshore.test.apply.service;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
 import org.newoffshore.pages.apply.service.singapore.*;
@@ -27,7 +28,7 @@ public class SeviceDetailTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get(ConfigReader.getUrlOffer());
+        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
         driver.navigate().refresh();
     }
 

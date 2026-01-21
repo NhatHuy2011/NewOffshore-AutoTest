@@ -1,12 +1,14 @@
-package org.newoffshore.pages.apply.member_information.singapore;
+package org.newoffshore.pages.apply.member_information;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-public class FormACompany_DirectorInformation {
+public class DirectorInformation {
     private final WebDriver driver;
 
-    public FormACompany_DirectorInformation(WebDriver driver) {
+    public DirectorInformation(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -16,9 +18,7 @@ public class FormACompany_DirectorInformation {
 
     private final By emailDirectorInput = By.name("directors.0.email");
 
-    private final By phoneNumberInput = By.xpath(
-            "//div[@id='directors.0.phone']//input[@type='tel']"
-    );
+    private final By phoneNumberInput = By.xpath("//div[@id='directors.0.phone']//input[@type='tel']");
 
     private final By passportUploadInput = By.id("directors.0.passport_path-upload");
 
@@ -46,15 +46,27 @@ public class FormACompany_DirectorInformation {
     }
 
     public void sendKeyPassportUpload(String path){
-        driver.findElement(passportUploadInput).sendKeys(path);
+        if(path != null && !path.isEmpty()){
+            driver.findElement(passportUploadInput).sendKeys(path);
+        } else {
+            System.out.println("Not Found File Upload");
+        }
     }
 
     public void sendKeyAddressProofUpload(String path){
-        driver.findElement(addressProofUploadInput).sendKeys(path);
+        if(path != null && !path.isEmpty()){
+            driver.findElement(addressProofUploadInput).sendKeys(path);
+        }else {
+            System.out.println("Not Found File Upload");
+        }
     }
 
     public void sendKeySelfieImageUpload(String path){
-        driver.findElement(selfieUploadInput).sendKeys(path);
+        if (path != null && !path.isEmpty()){
+            driver.findElement(selfieUploadInput).sendKeys(path);
+        }else {
+            System.out.println("Not Found File Upload");
+        }
     }
 
     public void selectNextButton(){
@@ -66,9 +78,12 @@ public class FormACompany_DirectorInformation {
         sendKeyFullnameDirector("Nhat Huy");
         sendKeyEmailDirector("huydt04082003@gmail.com");
         sendKeyPhoneNumberDirector("201-555-0123");
-        sendKeyPassportUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
-        sendKeyAddressProofUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
-        sendKeySelfieImageUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        Thread.sleep(1000);
+        sendKeyPassportUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
+        Thread.sleep(1000);
+        sendKeyAddressProofUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
+        Thread.sleep(1000);
+        sendKeySelfieImageUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
         Thread.sleep(1000);
         selectNextButton();
     }

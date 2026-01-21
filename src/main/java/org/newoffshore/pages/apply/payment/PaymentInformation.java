@@ -14,6 +14,8 @@ public class PaymentInformation {
 
     private final By proceedToPaymentButton = By.cssSelector("button[type='submit']");
 
+    private final By completePaymentButton = By.xpath("//button[normalize-space() = 'I’ve Completed the Payment']");
+
     public void selectPaymentMethod(String id){
         driver.findElement(By.cssSelector("label[for='" + id + "']")).click();
     }
@@ -24,5 +26,16 @@ public class PaymentInformation {
 
     public void selectProceedToPayment(){
         driver.findElement(proceedToPaymentButton).click();
+    }
+
+    public void selectCompletedPayment(){
+        driver.findElement(completePaymentButton).click();
+    }
+
+    public void fillPaymentInformation(){
+        selectPaymentMethod("transfer");
+        selectTermAndPrivacy();
+        selectProceedToPayment();
+        selectCompletedPayment();
     }
 }

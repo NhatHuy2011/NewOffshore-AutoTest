@@ -1,4 +1,4 @@
-package org.newoffshore.pages.apply.company_information.singapore;
+package org.newoffshore.pages.apply.company_information;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FormACompany_CompanyInfo {
+public class CompanyInformation {
     private final WebDriver driver;
 
-    public FormACompany_CompanyInfo(WebDriver driver) {
+    public CompanyInformation(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -42,11 +42,7 @@ public class FormACompany_CompanyInfo {
     public void selectCountryOfOperation(String country){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        WebElement select = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.cssSelector("#country_of_operation button[data-slot='select-trigger']")
-                )
-        );
+        WebElement select = wait.until(ExpectedConditions.elementToBeClickable(countryOfOperationButton));
         select.click();
 
         WebElement option = wait.until(
