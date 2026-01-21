@@ -1,13 +1,21 @@
 package org.newoffshore.pages.apply.member_information;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ShareHolderInformation {
     private final WebDriver driver;
+    private final WebDriverWait wait;
 
     public ShareHolderInformation(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     private final By typeOfShareHolderButton = By.id("shareholders.0.type");
@@ -31,40 +39,64 @@ public class ShareHolderInformation {
     private final By nextButton = By.id("company-principals-next");
 
     public void selectTypeOfShareHolder(String type){
-        driver.findElement(typeOfShareHolderButton).click();
-        driver.findElement(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='" + type +"']]")).click();
+        WebElement button = wait.until(
+                ExpectedConditions.elementToBeClickable(typeOfShareHolderButton)
+        );
+        button.click();
+
+        By optionLocator = By.xpath(
+                "//div[@data-slot='select-item' and .//span[normalize-space()='" + type + "']]"
+        );
+
+        WebElement option = wait.until(
+                ExpectedConditions.presenceOfElementLocated(optionLocator)
+        );
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView({block: 'center'});", option);
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(optionLocator));
+        option.click();
     }
 
     public void sendKeyFullnameShareHolder(String fullname){
-        driver.findElement(fullnameShareHolderInput).sendKeys(fullname);
+        WebElement fullnameInputElement = wait.until(ExpectedConditions.elementToBeClickable(fullnameShareHolderInput));
+        fullnameInputElement.sendKeys(fullname);
     }
 
     public void sendKeyEmailshareholder(String email){
-        driver.findElement(emailShareHolderInput).sendKeys(email);
+        WebElement emailInputElement = wait.until(ExpectedConditions.elementToBeClickable(emailShareHolderInput));
+        emailInputElement.sendKeys(email);
     }
 
     public void sendKeyPhoneNumbershareholder(String phoneNumber){
-        driver.findElement(phoneNumberInput).sendKeys(phoneNumber);
+        WebElement phoneInputElement = wait.until(ExpectedConditions.elementToBeClickable(phoneNumberInput));
+        phoneInputElement.sendKeys(phoneNumber);
     }
 
     public void sendKeyShare(int share){
-        driver.findElement(shareInput).sendKeys(String.valueOf(share));
+        WebElement shareInputElement = wait.until(ExpectedConditions.elementToBeClickable(shareInput));
+        shareInputElement.sendKeys(String.valueOf(share));
     }
 
     public void sendKeyPassportUpload(String path){
-        driver.findElement(passportUploadInput).sendKeys(path);
+        WebElement passPortUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(passportUploadInput));
+        passPortUploadElement.sendKeys(path);
     }
 
     public void sendKeyAddressProofUpload(String path){
-        driver.findElement(addressProofUploadInput).sendKeys(path);
+        WebElement addressProofUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(addressProofUploadInput));
+        addressProofUploadElement.sendKeys(path);
     }
 
     public void sendKeySelfieImageUpload(String path){
-        driver.findElement(selfieUploadInput).sendKeys(path);
+        WebElement selfieUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(selfieUploadInput));
+        selfieUploadElement.sendKeys(path);
     }
 
-    public void selectNextButton(){
-        driver.findElement(nextButton).click();
+    public void clickNextButton(){
+        WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
+        nextButtonElement.click();
     }
 
     public void fillShareHolderInformation() throws InterruptedException {
@@ -74,12 +106,12 @@ public class ShareHolderInformation {
         sendKeyPhoneNumbershareholder("201-555-0123");
         sendKeyShare(10000);
         Thread.sleep(1000);
-        sendKeyPassportUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        sendKeyPassportUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
         Thread.sleep(1000);
-        sendKeyAddressProofUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        sendKeyAddressProofUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
         Thread.sleep(1000);
-        sendKeySelfieImageUpload("C:\\Users\\Admin\\OneDrive\\Desktop\\avatar.jpg");
+        sendKeySelfieImageUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
         Thread.sleep(1000);
-        selectNextButton();
+        clickNextButton();
     }
 }

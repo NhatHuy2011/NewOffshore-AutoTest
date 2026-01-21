@@ -74,6 +74,13 @@ public class CompanyManagementTransferTest {
         uboInformation.fillUBOInformation();
     }
 
+    @Test
+    public void uploadDocument() throws InterruptedException {
+        //Fill Company Information
+        CompanyDocument companyDocument = new CompanyDocument(driver);
+        companyDocument.fillCompanyDocument();
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();

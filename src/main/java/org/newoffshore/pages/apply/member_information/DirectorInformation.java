@@ -4,12 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class DirectorInformation {
     private final WebDriver driver;
+    private final WebDriverWait wait;
 
     public DirectorInformation(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     private final By typeOfDirectorButton = By.id("directors.0.type");
@@ -29,48 +35,46 @@ public class DirectorInformation {
     private final By nextButton = By.id("company-principals-next");
 
     public void selectTypeOfDirector(String type){
-        driver.findElement(typeOfDirectorButton).click();
-        driver.findElement(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='" + type +"']]")).click();
+        WebElement typeElementButton = wait.until(ExpectedConditions.elementToBeClickable(typeOfDirectorButton));
+        typeElementButton.click();
+
+        WebElement typeElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='" + type +"']]")));
+        typeElement.click();
     }
 
     public void sendKeyFullnameDirector(String fullname){
-        driver.findElement(fullnameDirectorInput).sendKeys(fullname);
+        WebElement fullnameInputElement = wait.until(ExpectedConditions.elementToBeClickable(fullnameDirectorInput));
+        fullnameInputElement.sendKeys(fullname);
     }
 
     public void sendKeyEmailDirector(String email){
-        driver.findElement(emailDirectorInput).sendKeys(email);
+        WebElement emailInputElement = wait.until(ExpectedConditions.elementToBeClickable(emailDirectorInput));
+        emailInputElement.sendKeys(email);
     }
 
     public void sendKeyPhoneNumberDirector(String phoneNumber){
-        driver.findElement(phoneNumberInput).sendKeys(phoneNumber);
+        WebElement phoneInputElement = wait.until(ExpectedConditions.elementToBeClickable(phoneNumberInput));
+        phoneInputElement.sendKeys(phoneNumber);
     }
 
     public void sendKeyPassportUpload(String path){
-        if(path != null && !path.isEmpty()){
-            driver.findElement(passportUploadInput).sendKeys(path);
-        } else {
-            System.out.println("Not Found File Upload");
-        }
+        WebElement passPortUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(passportUploadInput));
+        passPortUploadElement.sendKeys(path);
     }
 
     public void sendKeyAddressProofUpload(String path){
-        if(path != null && !path.isEmpty()){
-            driver.findElement(addressProofUploadInput).sendKeys(path);
-        }else {
-            System.out.println("Not Found File Upload");
-        }
+        WebElement addressProofUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(addressProofUploadInput));
+        addressProofUploadElement.sendKeys(path);
     }
 
     public void sendKeySelfieImageUpload(String path){
-        if (path != null && !path.isEmpty()){
-            driver.findElement(selfieUploadInput).sendKeys(path);
-        }else {
-            System.out.println("Not Found File Upload");
-        }
+        WebElement selfieUploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(selfieUploadInput));
+        selfieUploadElement.sendKeys(path);
     }
 
-    public void selectNextButton(){
-        driver.findElement(nextButton).click();
+    public void clickNextButton(){
+        WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
+        nextButtonElement.click();
     }
 
     public void fillDirectorInformation() throws InterruptedException {
@@ -78,13 +82,10 @@ public class DirectorInformation {
         sendKeyFullnameDirector("Nhat Huy");
         sendKeyEmailDirector("huydt04082003@gmail.com");
         sendKeyPhoneNumberDirector("201-555-0123");
-        Thread.sleep(1000);
-        sendKeyPassportUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
-        Thread.sleep(1000);
-        sendKeyAddressProofUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
-        Thread.sleep(1000);
-        sendKeySelfieImageUpload("C:\\Users\\Admin\\Downloads\\image1.jpg");
-        Thread.sleep(1000);
-        selectNextButton();
+        sendKeyPassportUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeyAddressProofUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeySelfieImageUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        Thread.sleep(2000);
+        clickNextButton();
     }
 }
