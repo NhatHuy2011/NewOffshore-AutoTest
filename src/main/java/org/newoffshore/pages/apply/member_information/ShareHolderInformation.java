@@ -10,11 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ShareHolderInformation {
-    private final WebDriver driver;
     private final WebDriverWait wait;
 
     public ShareHolderInformation(WebDriver driver) {
-        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
@@ -39,24 +37,11 @@ public class ShareHolderInformation {
     private final By nextButton = By.id("company-principals-next");
 
     public void selectTypeOfShareHolder(String type){
-        WebElement button = wait.until(
-                ExpectedConditions.elementToBeClickable(typeOfShareHolderButton)
-        );
-        button.click();
+        WebElement typeElementButton = wait.until(ExpectedConditions.elementToBeClickable(typeOfShareHolderButton));
+        typeElementButton.click();
 
-        By optionLocator = By.xpath(
-                "//div[@data-slot='select-item' and .//span[normalize-space()='" + type + "']]"
-        );
-
-        WebElement option = wait.until(
-                ExpectedConditions.presenceOfElementLocated(optionLocator)
-        );
-
-        ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].scrollIntoView({block: 'center'});", option);
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(optionLocator));
-        option.click();
+        WebElement typeElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='" + type +"']]")));
+        typeElement.click();
     }
 
     public void sendKeyFullnameShareHolder(String fullname){
