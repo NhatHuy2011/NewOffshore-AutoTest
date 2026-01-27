@@ -30,8 +30,8 @@ public class GroupOfService {
         selectButton("singapore-apply-form-next");
     }
 
-    //Select Group Of Service - Company Maintainance
-    public void selectGroupCompanyMaintainance(){
+    //Select Group Of Service - Company Maintenance
+    public void selectGroupCompanyMaintenance(){
         selectGroupService("company_maintenance");
         selectButton("singapore-apply-form-next");
     }

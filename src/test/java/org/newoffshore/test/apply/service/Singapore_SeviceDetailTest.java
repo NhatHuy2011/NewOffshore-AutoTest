@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class SeviceDetailTest {
+public class Singapore_SeviceDetailTest {
     private WebDriver driver;
 
     @BeforeEach
@@ -143,7 +143,7 @@ public class SeviceDetailTest {
 
         //Select Group Of Service
         GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyMaintainance();
+        groupOfService.selectGroupCompanyMaintenance();
 
         CompanyMaintenance_ServiceDetail companyMaintenanceServiceDetail = new CompanyMaintenance_ServiceDetail(driver);
         companyMaintenanceServiceDetail.selectMaintain_For_Local_NoAccounting();
