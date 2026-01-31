@@ -45,10 +45,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupFormACompany();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupFormACompany();
 
-        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
         formACompanyServiceDetail.selectIncorp_For_Local();
     }
 
@@ -64,10 +64,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupFormACompany();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupFormACompany();
 
-        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
         formACompanyServiceDetail.selectIncorp_For_NoLocal();
     }
 
@@ -84,10 +84,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyManagementTransfer();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
         companyManagementTransferServiceDetail.selectTransfer_For_Local_NoAccounting();
     }
 
@@ -103,10 +103,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyManagementTransfer();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
         companyManagementTransferServiceDetail.selectTransfer_For_Local_HasAccounting();
     }
 
@@ -122,10 +122,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyManagementTransfer();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
         companyManagementTransferServiceDetail.selectTransfer_For_NoLocal();
     }
 
@@ -142,10 +142,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyMaintenance();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCompanyMaintenance();
 
-        CompanyMaintenance_ServiceDetail companyMaintenanceServiceDetail = new CompanyMaintenance_ServiceDetail(driver);
+        Singapore_CompanyMaintenance_Service companyMaintenanceServiceDetail = new Singapore_CompanyMaintenance_Service(driver);
         companyMaintenanceServiceDetail.selectMaintain_For_Local_NoAccounting();
     }
 
@@ -162,10 +162,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupNomineeDirectorship();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupNomineeDirectorship();
 
-        NomineeDirectorship_ServiceDetail nomineeDirectorshipServiceDetail = new NomineeDirectorship_ServiceDetail(driver);
+        Singapore_NomineeDirectorship_Service nomineeDirectorshipServiceDetail = new Singapore_NomineeDirectorship_Service(driver);
         nomineeDirectorshipServiceDetail.selectNomineeDirectorship();
     }
 
@@ -182,10 +182,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupAccounting();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupAccounting();
 
-        Accounting_ServiceDetail accountingServiceDetail = new Accounting_ServiceDetail(driver);
+        Singapore_Accounting_Service accountingServiceDetail = new Singapore_Accounting_Service(driver);
         accountingServiceDetail.selectAccouting();
     }
 
@@ -202,10 +202,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupBusinessBank();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupBusinessBank();
 
-        BusinessBanking_ServiceDetail businessBankingServiceDetail = new BusinessBanking_ServiceDetail(driver);
+        Singapore_BusinessBanking_Service businessBankingServiceDetail = new Singapore_BusinessBanking_Service(driver);
         businessBankingServiceDetail.selectBusinessBanking();
     }
 
@@ -222,10 +222,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupEmploymentPass();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupEmploymentPass();
 
-        EmploymentPass_ServiceDetail employmentPassServiceDetail = new EmploymentPass_ServiceDetail(driver);
+        Singapore_EmploymentPass_Service employmentPassServiceDetail = new Singapore_EmploymentPass_Service(driver);
         employmentPassServiceDetail.selectEmploymentPass();
     }
 
@@ -241,10 +241,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupEmploymentPass();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupEmploymentPass();
 
-        EmploymentPass_ServiceDetail employmentPassServiceDetail = new EmploymentPass_ServiceDetail(driver);
+        Singapore_EmploymentPass_Service employmentPassServiceDetail = new Singapore_EmploymentPass_Service(driver);
         employmentPassServiceDetail.selectDependantPass();
     }
 
@@ -261,10 +261,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCommercialContract();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCommercialContract();
 
-        CommercialContract_ServiceDetail commercialContractServiceDetail = new CommercialContract_ServiceDetail(driver);
+        Singapore_CommercialContract_Service commercialContractServiceDetail = new Singapore_CommercialContract_Service(driver);
         commercialContractServiceDetail.selectCommercialContract_Custom();
     }
 
@@ -280,10 +280,10 @@ public class Singapore_SeviceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCommercialContract();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCommercialContract();
 
-        CommercialContract_ServiceDetail commercialContractServiceDetail = new CommercialContract_ServiceDetail(driver);
+        Singapore_CommercialContract_Service commercialContractServiceDetail = new Singapore_CommercialContract_Service(driver);
         commercialContractServiceDetail.selectCommercialContract_Templates();
     }
 

@@ -11,8 +11,8 @@ import org.newoffshore.pages.apply.member_information.ShareHolderInformation;
 import org.newoffshore.pages.apply.member_information.UBOInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.FormACompany_ServiceDetail;
-import org.newoffshore.pages.apply.service.singapore.GroupOfService;
+import org.newoffshore.pages.apply.service.singapore.Singapore_FormACompany_Service;
+import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class FormACompanyTest {
+public class Singapore_FormACompanyTest {
     private WebDriver driver;
 
     @BeforeEach
@@ -51,11 +51,11 @@ public class FormACompanyTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupFormACompany();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupFormACompany();
 
         //Select Service Detail
-        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
         formACompanyServiceDetail.selectIncorp_For_Local();
 
         //Select Payment Method

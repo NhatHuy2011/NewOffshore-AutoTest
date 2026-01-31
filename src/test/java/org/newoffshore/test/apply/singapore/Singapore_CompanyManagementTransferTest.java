@@ -5,15 +5,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.CompanyDocument;
-import org.newoffshore.pages.apply.company_information.CompanyInformation;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.member_information.DirectorInformation;
 import org.newoffshore.pages.apply.member_information.ShareHolderInformation;
 import org.newoffshore.pages.apply.member_information.UBOInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.CompanyManagementTransfer_ServiceDetail;
-import org.newoffshore.pages.apply.service.singapore.GroupOfService;
+import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyManagementTransfer_Service;
+import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class CompanyManagementTransferTest {
+public class Singapore_CompanyManagementTransferTest {
     private WebDriver driver;
 
     @BeforeEach
@@ -51,10 +50,10 @@ public class CompanyManagementTransferTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyManagementTransfer();
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCompanyManagementTransfer();
 
-        CompanyManagementTransfer_ServiceDetail companyManagementTransferServiceDetail = new CompanyManagementTransfer_ServiceDetail(driver);
+        Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
         companyManagementTransferServiceDetail.selectTransfer_For_Local_HasAccounting();
 
         //Select Payment Method

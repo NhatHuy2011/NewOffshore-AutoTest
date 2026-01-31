@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CompanyManagementTransfer_ServiceDetail {
+public class HongKong_CompanyManagementTransfer_Service {
     private final WebDriverWait wait;
 
     private final WebDriver driver;
 
-    public CompanyManagementTransfer_ServiceDetail(WebDriver driver) {
+    public HongKong_CompanyManagementTransfer_Service(WebDriver driver) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.driver = driver;
     }

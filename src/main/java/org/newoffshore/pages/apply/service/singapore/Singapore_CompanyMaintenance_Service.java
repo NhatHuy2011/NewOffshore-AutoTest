@@ -3,10 +3,10 @@ package org.newoffshore.pages.apply.service.singapore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CompanyMaintenance_ServiceDetail {
+public class Singapore_CompanyMaintenance_Service {
     private final WebDriver driver;
 
-    public CompanyMaintenance_ServiceDetail(WebDriver driver) {
+    public Singapore_CompanyMaintenance_Service(WebDriver driver) {
         this.driver = driver;
     }
 

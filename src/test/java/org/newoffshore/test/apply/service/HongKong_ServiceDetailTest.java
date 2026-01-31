@@ -45,10 +45,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupFormACompany();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupFormACompany();
 
-        FormACompany_ServiceDetail formACompanyServiceDetail = new FormACompany_ServiceDetail(driver);
+        HongKong_FormACompany_Service formACompanyServiceDetail = new HongKong_FormACompany_Service(driver);
         formACompanyServiceDetail.selectIncorp_Has_Accounting();
     }
 
@@ -65,10 +65,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupAccounting();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupAccounting();
 
-        CompanyManagementTransfer_ServiceDetail transferService = new CompanyManagementTransfer_ServiceDetail(driver);
+        HongKong_CompanyManagementTransfer_Service transferService = new HongKong_CompanyManagementTransfer_Service(driver);
         transferService.selectCompanyManagementTransfer_Has_Accounting();
     }
 
@@ -85,10 +85,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyMaintenance();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCompanyMaintenance();
 
-        CompanyMaintain_ServiceDetail companyMaintainServiceDetail = new CompanyMaintain_ServiceDetail(driver);
+        HongKong_CompanyMaintain_Service companyMaintainServiceDetail = new HongKong_CompanyMaintain_Service(driver);
         companyMaintainServiceDetail.selectCompanyMaintain();
     }
 
@@ -105,10 +105,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCompanyRestoration();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCompanyRestoration();
 
-        CompanyRestoration_ServiceDetail companyRestorationServiceDetail = new CompanyRestoration_ServiceDetail(driver);
+        HongKong_CompanyRestoration_Service companyRestorationServiceDetail = new HongKong_CompanyRestoration_Service(driver);
         companyRestorationServiceDetail.selectCompanyRestoration();
     }
 
@@ -125,10 +125,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupAccounting();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupAccounting();
 
-        Accounting_ServiceDetail accountingServiceDetail = new Accounting_ServiceDetail(driver);
+        HongKong_Accounting_Service accountingServiceDetail = new HongKong_Accounting_Service(driver);
         accountingServiceDetail.selectAccounting();
     }
 
@@ -145,10 +145,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupBusinessBank();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupBusinessBank();
 
-        BusinessBank_ServiceDetail businessBankServiceDetail = new BusinessBank_ServiceDetail(driver);
+        HongKong_BusinessBank_Service businessBankServiceDetail = new HongKong_BusinessBank_Service(driver);
         businessBankServiceDetail.selectBusinessBank();
     }
 
@@ -165,10 +165,10 @@ public class HongKong_ServiceDetailTest {
         speakAndCheckout.selectNextButton();
 
         //Select Group Of Service
-        GroupOfService groupOfService = new GroupOfService(driver);
-        groupOfService.selectGroupCloseCompany();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCloseCompany();
 
-        CloseCompany_ServiceDetail closeCompanyServiceDetail = new CloseCompany_ServiceDetail(driver);
+        HongKong_CloseCompany_Service closeCompanyServiceDetail = new HongKong_CloseCompany_Service(driver);
         closeCompanyServiceDetail.selectCloseCompany();
     }
 

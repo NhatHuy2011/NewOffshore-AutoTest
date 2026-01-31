@@ -8,10 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CloseCompany_ServiceDetail {
+public class HongKong_CloseCompany_Service {
     private final WebDriverWait wait;
 
-    public CloseCompany_ServiceDetail(WebDriver driver) {
+    public HongKong_CloseCompany_Service(WebDriver driver) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
