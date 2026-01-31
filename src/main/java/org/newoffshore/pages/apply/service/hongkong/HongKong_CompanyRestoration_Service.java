@@ -17,7 +17,7 @@ public class HongKong_CompanyRestoration_Service {
 
     private final By continueButton = By.xpath("//button[normalize-space() = 'Cancel']");
 
-    private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here]");
+    private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here']");
 
     public void clickCancel(){
         WebElement cancelElement = wait.until(ExpectedConditions.elementToBeClickable(continueButton));

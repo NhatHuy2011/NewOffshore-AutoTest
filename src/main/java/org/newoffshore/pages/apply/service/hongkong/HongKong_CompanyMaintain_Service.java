@@ -22,7 +22,7 @@ public class HongKong_CompanyMaintain_Service {
 
     public void sendCustomRequest(String label, String text){
         WebElement customRequestElement = wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("label['"+ label +"'] textarea")
+                By.cssSelector("label[for='"+ label +"'] textarea")
         ));
         customRequestElement.sendKeys(text);
     }

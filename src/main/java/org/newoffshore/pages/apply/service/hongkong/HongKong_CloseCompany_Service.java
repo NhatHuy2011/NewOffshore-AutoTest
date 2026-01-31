@@ -17,7 +17,7 @@ public class HongKong_CloseCompany_Service {
 
     private final By cancelButton = By.xpath("//button[normalize-space() = 'Cancel']");
 
-    private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here]");
+    private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here']");
 
     public void selectCancelButton(){
         WebElement cancelButtonElement = wait.until(ExpectedConditions.elementToBeClickable(cancelButton));

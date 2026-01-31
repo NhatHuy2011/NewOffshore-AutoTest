@@ -54,7 +54,7 @@ public class HongKong_ServiceDetailTest {
 
     //Company Management Transfer
     @Test
-    public void selectCompanyManagementTransfer_Has_Accounting() throws InterruptedException {
+    public void selectCompanyManagementTransfer_Has_Accounting() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -66,7 +66,7 @@ public class HongKong_ServiceDetailTest {
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
-        hongKongGroupOfService.selectGroupAccounting();
+        hongKongGroupOfService.selectGroupCompanyManagementTransfer();
 
         HongKong_CompanyManagementTransfer_Service transferService = new HongKong_CompanyManagementTransfer_Service(driver);
         transferService.selectCompanyManagementTransfer_Has_Accounting();

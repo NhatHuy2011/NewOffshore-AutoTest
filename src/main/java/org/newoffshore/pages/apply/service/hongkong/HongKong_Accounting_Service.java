@@ -15,7 +15,7 @@ public class HongKong_Accounting_Service {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    private final By okTermButton = By.xpath("//button[normalize-space() = 'OK'");
+    private final By okTermButton = By.xpath("//button[normalize-space() = 'OK']");
 
     public void selectTerm(){
         WebElement okTermElement = wait.until(ExpectedConditions.elementToBeClickable(okTermButton));

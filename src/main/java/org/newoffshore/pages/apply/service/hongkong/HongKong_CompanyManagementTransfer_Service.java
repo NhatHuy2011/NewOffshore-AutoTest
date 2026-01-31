@@ -11,37 +11,31 @@ import java.time.Duration;
 public class HongKong_CompanyManagementTransfer_Service {
     private final WebDriverWait wait;
 
-    private final WebDriver driver;
-
     public HongKong_CompanyManagementTransfer_Service(WebDriver driver) {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.driver = driver;
     }
 
     private final By termOKButton = By.xpath("//button[normalize-space() = 'OK']");
 
-    public void selectTerm() throws InterruptedException {
+    public void selectTerm() {
         WebElement termElement = wait.until(ExpectedConditions.elementToBeClickable(termOKButton));
         termElement.click();
-        Thread.sleep(2000);
     }
 
-    public void selectButton(String id) throws InterruptedException {
-//        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-//        buttonElement.click();
-        driver.findElement(By.id(id)).click();
-        Thread.sleep(2000);
+    public void selectButton(String id) {
+        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+        buttonElement.click();
     }
 
-//    public void selectCompanyManagementTransfer_No_Accounting(){
-//        selectTerm();
-//        selectButton("singapore-apply-form-next");
-//        selectTerm();
-//        selectButton("no_skip_this_option");
-//        selectButton("singapore-apply-form-next");
-//    }
+    public void selectCompanyManagementTransfer_No_Accounting() {
+        selectTerm();
+        selectButton("singapore-apply-form-next");
+        selectTerm();
+        selectButton("no_skip_this_option");
+        selectButton("singapore-apply-form-next");
+    }
 
-    public void selectCompanyManagementTransfer_Has_Accounting() throws InterruptedException {
+    public void selectCompanyManagementTransfer_Has_Accounting() {
         selectTerm();
         selectButton("singapore-apply-form-next");
         selectTerm();
