@@ -10,15 +10,10 @@ public class Singapore_CompanyMaintenance_Service {
         this.driver = driver;
     }
 
-    private final By cancelGoogleCalendarButton = By.xpath("//button[normalize-space() = 'Cancel']");
     private final By customRequestTextArea = By.xpath("//textarea[@data-slot='textarea' and @placeholder='Please enter a description here']");
 
     public void selectButton(String id){
         driver.findElement(By.id(id)).click();
-    }
-
-    public void selectCancel(){
-        driver.findElement(cancelGoogleCalendarButton).click();
     }
 
     public void sendKeyCustomRequestMaintain(String text){
@@ -42,10 +37,6 @@ public class Singapore_CompanyMaintenance_Service {
         selectButton("custom_request");
         sendKeyCustomRequestMaintain("Test");
         selectButton("singapore-apply-form-next");
-        selectButton("close_company");
-        selectCancel();
-        selectButton("restore_company");
-        selectCancel();
         selectButton("singapore-apply-form-next");
     }
 }
