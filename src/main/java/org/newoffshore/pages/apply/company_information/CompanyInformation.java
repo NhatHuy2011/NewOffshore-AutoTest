@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CompanyInformation {
-    private final WebDriver driver;
+    private final WebDriverWait wait;
 
     public CompanyInformation(WebDriver driver) {
-        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     private final By companyNameInput = By.cssSelector("#company_name input");
@@ -28,20 +28,21 @@ public class CompanyInformation {
     private final By companyInfoNextButton = By.id("company-info-next");
 
     public void sendKeyCompanyName(String companyName){
-        driver.findElement(companyNameInput).sendKeys(companyName);
+        WebElement companyNameElement = wait.until(ExpectedConditions.elementToBeClickable(companyNameInput));
+        companyNameElement.sendKeys(companyName);
     }
 
     public void sendKeyBusinessDescription(String businessDescription){
-        driver.findElement(businessDescriptionInput).sendKeys(businessDescription);
+        WebElement businessDescriptionElement = wait.until(ExpectedConditions.elementToBeClickable(businessDescriptionInput));
+        businessDescriptionElement.sendKeys(businessDescription);
     }
 
     public void sendKeyShareCapital(int shareCaptital){
-        driver.findElement(shareCapitalInput).sendKeys(String.valueOf(shareCaptital));
+        WebElement shareCapitalElement = wait.until(ExpectedConditions.elementToBeClickable(shareCapitalInput));
+        shareCapitalElement.sendKeys(String.valueOf(shareCaptital));
     }
 
     public void selectCountryOfOperation(String country){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
         WebElement select = wait.until(ExpectedConditions.elementToBeClickable(countryOfOperationButton));
         select.click();
 
@@ -54,11 +55,13 @@ public class CompanyInformation {
     }
 
     public void sendKeySSICCode(String code){
-        driver.findElement(ssicCodeInput).sendKeys(code);
+        WebElement ssicCodeElement = wait.until(ExpectedConditions.elementToBeClickable(ssicCodeInput));
+        ssicCodeElement.sendKeys(code);
     }
 
     public void selectNextButton(){
-        driver.findElement(companyInfoNextButton).click();
+        WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(companyInfoNextButton));
+        nextButtonElement.click();
     }
 
     public void fillCompanyInformation() {

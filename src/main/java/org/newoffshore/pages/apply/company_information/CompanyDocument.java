@@ -9,11 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CompanyDocument {
-    private final WebDriver driver;
     private final WebDriverWait wait;
 
     public CompanyDocument(WebDriver driver) {
-        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

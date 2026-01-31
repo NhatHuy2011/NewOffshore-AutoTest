@@ -2,16 +2,22 @@ package org.newoffshore.pages.apply.service.singapore;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Singapore_BusinessBanking_Service {
-    private final WebDriver driver;
+    private final WebDriverWait wait;
 
     public Singapore_BusinessBanking_Service(WebDriver driver) {
-        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void selectButton(String id){
-        driver.findElement(By.id(id)).click();
+        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+        buttonElement.click();
     }
 
     public void selectBusinessBanking(){
