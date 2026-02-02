@@ -67,13 +67,15 @@ public class MaintainCompany_CompanyInfo {
         nextElement.click();
     }
 
-    public void setCompanyInfoChangeMaintain() {
+    public void setCompanyInfoChangeMaintain() throws InterruptedException {
         setInputCompanyNameChange("The One Digi");
         setInputBusinessActivityChange("Tourism");
         setInputSSICCodeChange("1234, 2345");
         setInputOfficeAddressChange("40 Thien Phuoc");
         setInputProofOfAddressChange(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        Thread.sleep(1000);
         setInputIncreaseShareChange(10000);
         clickNextButton();
+        Thread.sleep(1000);
     }
 }

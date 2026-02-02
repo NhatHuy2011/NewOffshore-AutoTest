@@ -32,8 +32,6 @@ public class Singapore_CompanyMaintenance_Service {
         selectButton("singapore-apply-form-next");
         selectButton("appointment_director");
         selectButton("resignation_director");
-        selectButton("appointment_auditor");
-        selectButton("resignation_auditor");
         selectButton("update_director_shareholder_information");
         selectButton("change_business_activity");
         selectButton("change_company_name");

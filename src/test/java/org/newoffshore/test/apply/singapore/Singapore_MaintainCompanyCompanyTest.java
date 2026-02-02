@@ -7,6 +7,7 @@ import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
 import org.newoffshore.pages.apply.company_information.order_addons.singapore.MaintainCompany_CompanyInfo;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
+import org.newoffshore.pages.apply.member_information.order_addons.singapore.MaintainCompany_MemberInfo;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
 import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyMaintenance_Service;
@@ -32,7 +33,7 @@ public class Singapore_MaintainCompanyCompanyTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
+        driver.get("https://global-offshore.org/en/singapore/company-info/OD_4FTG9PY");
         driver.navigate().refresh();
     }
 
@@ -66,6 +67,21 @@ public class Singapore_MaintainCompanyCompanyTest {
         //Fill Company Info
         MaintainCompany_CompanyInfo maintainCompanyCompanyInfo = new MaintainCompany_CompanyInfo(driver);
         maintainCompanyCompanyInfo.setCompanyInfoChangeMaintain();
+    }
+
+    @Test
+    public void testCompanyMember() throws InterruptedException {
+        //Select Company
+        SelectCompany selectCompany = new SelectCompany(driver);
+        selectCompany.selectCompany("The One Digi Singapore");
+
+        //Fill Company Info
+        MaintainCompany_CompanyInfo maintainCompanyCompanyInfo = new MaintainCompany_CompanyInfo(driver);
+        maintainCompanyCompanyInfo.setCompanyInfoChangeMaintain();
+
+        //Fill Company Member
+        MaintainCompany_MemberInfo maintainCompanyMemberInfo = new MaintainCompany_MemberInfo(driver);
+        maintainCompanyMemberInfo.setCompanyMemberChange();
     }
 
     @AfterEach
