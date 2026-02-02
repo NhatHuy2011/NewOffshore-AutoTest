@@ -1,5 +1,7 @@
 package org.newoffshore.pages.apply.member_information;
 
+import org.newoffshore.constant.Constant;
+import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -80,9 +82,9 @@ public class DirectorInformation {
         sendKeyFullnameDirector("Nhat Huy");
         sendKeyEmailDirector("huydt04082003@gmail.com");
         sendKeyPhoneNumberDirector("201-555-0123");
-        sendKeyPassportUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
-        sendKeyAddressProofUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
-        sendKeySelfieImageUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
         Thread.sleep(2000);
         clickNextButton();
     }

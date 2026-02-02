@@ -37,7 +37,7 @@ public class SelectCompany {
     }
 
     public void selectCompany(String companyName) {
-        selectCompanyOption("The One Digi");
+        selectCompanyOption(companyName);
         clickNextButton();
     }
 }

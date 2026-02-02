@@ -1,5 +1,7 @@
 package org.newoffshore.pages.apply.company_information;
 
+import org.newoffshore.constant.Constant;
+import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,7 +32,7 @@ public class CompanyDocument {
     }
 
     public void fillCompanyDocument() throws InterruptedException {
-        uploadDocumentCompany("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        uploadDocumentCompany(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
 
         Thread.sleep(2000);
 

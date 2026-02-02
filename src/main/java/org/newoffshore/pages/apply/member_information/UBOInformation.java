@@ -1,5 +1,7 @@
 package org.newoffshore.pages.apply.member_information;
 
+import org.newoffshore.constant.Constant;
+import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -79,11 +81,11 @@ public class UBOInformation {
         sendKeyPhoneNumberUBO("201-555-0123");
         sendKeyPercentage(100);
         Thread.sleep(1000);
-        sendKeyPassportUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeyAddressProofUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeySelfieImageUpload("C:\\Users\\ADMIN\\Desktop\\2.pdf");
+        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
         Thread.sleep(1000);
         clickNextButton();
     }

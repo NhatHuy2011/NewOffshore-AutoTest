@@ -3,6 +3,9 @@ package org.newoffshore.utils;
 import org.newoffshore.constant.Constant;
 
 import java.io.FileInputStream;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -33,4 +36,17 @@ public class ConfigReader {
     public static String getCookiesAccessTọkenValue(){
         return properties.getProperty("cookies.access_token.value");
     }
+
+    public static String getResourceFilePath(String resourcePath) {
+        try {
+            return Paths.get(
+                    Objects.requireNonNull(
+                            ClassLoader.getSystemResource(resourcePath)
+                    ).toURI()
+            ).toFile().getAbsolutePath();
+        } catch (Exception e) {
+            throw new RuntimeException("Cannot load resource: " + resourcePath, e);
+        }
+    }
+
 }

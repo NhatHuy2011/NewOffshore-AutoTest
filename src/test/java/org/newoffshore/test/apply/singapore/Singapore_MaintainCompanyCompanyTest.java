@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
+import org.newoffshore.pages.apply.company_information.order_addons.singapore.MaintainCompany_CompanyInfo;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
@@ -17,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_MaintainCompanyTest {
+public class Singapore_MaintainCompanyCompanyTest {
     private WebDriver driver;
 
     @BeforeEach
@@ -60,7 +61,11 @@ public class Singapore_MaintainCompanyTest {
 
         //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompany("The One Digi");
+        selectCompany.selectCompany("The One Digi Singapore");
+
+        //Fill Company Info
+        MaintainCompany_CompanyInfo maintainCompanyCompanyInfo = new MaintainCompany_CompanyInfo(driver);
+        maintainCompanyCompanyInfo.setCompanyInfoChangeMaintain();
     }
 
     @AfterEach
