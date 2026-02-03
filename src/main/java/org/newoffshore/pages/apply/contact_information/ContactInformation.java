@@ -1,15 +1,12 @@
 package org.newoffshore.pages.apply.contact_information;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class ContactInformation {
-    private final WebDriver driver;
-
+public class ContactInformation extends BasePage {
     public ContactInformation(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     private final By fullnameInput = By.name("full_name");
@@ -19,35 +16,30 @@ public class ContactInformation {
     private final By nextButton = By.xpath("//button[normalize-space()='Next']");
 
     public void setFullnameInput(String fullname){
-        driver.findElement(fullnameInput).sendKeys(fullname);
+        input(fullnameInput, fullname);
     }
 
     public void setEmailInput(String email){
-        WebElement emailInPut = driver.findElement(emailInput);
-        emailInPut.sendKeys(Keys.CONTROL + "a");
-        emailInPut.sendKeys(Keys.DELETE);
-        emailInPut.sendKeys(email);
+        input(emailInput, email);
     }
 
     public void setPhoneInput(int phone){
-        driver.findElement(phoneInput).sendKeys(String.valueOf(phone));
+        input(phoneInput, String.valueOf(phone));
     }
 
     public void setBusinessDescription(String businessDescription){
-        driver.findElement(businessDescriptionTextArea).sendKeys(businessDescription);
+        input(businessDescriptionTextArea, businessDescription);
     }
 
     public void clickNext(){
-        driver.findElement(nextButton).click();
+        click(nextButton);
     }
 
     public void fillContactInformation() {
-        ContactInformation contactInformationPage = new ContactInformation(driver);
-
-        contactInformationPage.setFullnameInput("Nhat Huy");
-        contactInformationPage.setEmailInput("huydt0408@gmail.com");
-        contactInformationPage.setPhoneInput(2015550123);
-        contactInformationPage.setBusinessDescription("Tourism");
-        contactInformationPage.clickNext();
+        setFullnameInput("Nhat Huy");
+        setEmailInput("huydt0408@gmail.com");
+        setPhoneInput(2015550123);
+        setBusinessDescription("Tourism");
+        clickNext();
     }
 }
