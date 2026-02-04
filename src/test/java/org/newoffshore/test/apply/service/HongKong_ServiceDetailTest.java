@@ -41,8 +41,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -61,8 +60,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -81,8 +79,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -101,8 +98,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -121,8 +117,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -141,8 +136,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
@@ -161,8 +155,7 @@ public class HongKong_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);

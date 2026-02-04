@@ -41,8 +41,7 @@ public class USA_ServiceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         USA_GroupOfService usaGroupOfService = new USA_GroupOfService(driver);

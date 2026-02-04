@@ -41,8 +41,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -60,8 +59,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -80,8 +78,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -99,8 +96,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -118,8 +114,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -138,8 +133,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -158,8 +152,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -178,8 +171,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -198,8 +190,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -218,8 +209,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -237,8 +227,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -257,8 +246,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
@@ -276,8 +264,7 @@ public class Singapore_SeviceDetailTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);

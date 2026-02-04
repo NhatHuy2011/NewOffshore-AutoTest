@@ -46,8 +46,7 @@ public class Singapore_MaintainCompanyCompanyTest {
 
         //Speak And Checkout
         SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOutButton();
-        speakAndCheckout.selectNextButton();
+        speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
