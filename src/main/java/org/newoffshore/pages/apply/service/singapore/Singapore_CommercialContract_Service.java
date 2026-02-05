@@ -1,35 +1,25 @@
 package org.newoffshore.pages.apply.service.singapore;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class Singapore_CommercialContract_Service {
-    private final WebDriverWait wait;
-
+public class Singapore_CommercialContract_Service extends BasePage {
     public Singapore_CommercialContract_Service(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public void selectButton(String id){
-        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-        buttonElement.click();
+        click(By.id(id));
     }
 
     public void selectOptionContractCustom(){
-        WebElement optionElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-slot='select-trigger']")));
-        optionElement.click();
-        WebElement quantityElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='5']]")));
-        quantityElement.click();
+        click(By.cssSelector("button[data-slot='select-trigger']"));
+        click(By.xpath("//div[@data-slot='select-item' and .//span[normalize-space()='5']]"));
     }
 
     public void sendKeyContractCustom(String text){
-        WebElement customRequestElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//textarea[@data-slot='textarea' and @placeholder='']")));
-        customRequestElement.sendKeys(text);
+        input(By.xpath("//textarea[@data-slot='textarea' and @placeholder='']"), text);
     }
 
     public void selectCommercialContract_Custom(){

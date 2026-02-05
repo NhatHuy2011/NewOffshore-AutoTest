@@ -1,30 +1,22 @@
 package org.newoffshore.pages.apply.service.singapore;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class Singapore_CompanyMaintenance_Service {
-    private final WebDriverWait wait;
-
+public class Singapore_CompanyMaintenance_Service extends BasePage {
     public Singapore_CompanyMaintenance_Service(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By customRequestTextArea = By.xpath("//textarea[@data-slot='textarea' and @placeholder='Please enter a description here']");
 
     public void selectButton(String id){
-        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-        buttonElement.click();
+        click(By.id(id));
     }
 
     public void sendKeyCustomRequestMaintain(String text){
-        WebElement customRequestElement = wait.until(ExpectedConditions.elementToBeClickable(customRequestTextArea));
-        customRequestElement.sendKeys(text);
+        input(customRequestTextArea, text);
     }
 
     public void selectMaintain_For_Local_NoAccounting(){

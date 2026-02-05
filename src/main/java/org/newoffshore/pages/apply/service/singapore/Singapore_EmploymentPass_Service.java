@@ -1,36 +1,28 @@
 package org.newoffshore.pages.apply.service.singapore;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class Singapore_EmploymentPass_Service {
-    private final WebDriverWait wait;
-
+public class Singapore_EmploymentPass_Service extends BasePage {
     public Singapore_EmploymentPass_Service(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By okTermButton = By.xpath("//button[normalize-space() = 'OK']");
+
     private final By cancelGoogleCalendarButton = By.xpath("//button[normalize-space() = 'Cancel']");
 
     public void selectButton(String id){
-        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-        buttonElement.click();
+        click(By.id(id));
     }
 
     public void selectTerm(){
-        WebElement termElement = wait.until(ExpectedConditions.elementToBeClickable(okTermButton));
-        termElement.click();
+        click(okTermButton);
     }
 
     public void selectCancel(){
-        WebElement cancelElement = wait.until(ExpectedConditions.elementToBeClickable(cancelGoogleCalendarButton));
-        cancelElement.click();
+        click(cancelGoogleCalendarButton);
     }
 
     public void selectEmploymentPass(){
