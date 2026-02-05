@@ -1,18 +1,12 @@
 package org.newoffshore.pages.apply.service.hongkong;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class HongKong_CloseCompany_Service {
-    private final WebDriverWait wait;
-
+public class HongKong_CloseCompany_Service extends BasePage {
     public HongKong_CloseCompany_Service(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By cancelButton = By.xpath("//button[normalize-space() = 'Cancel']");
@@ -20,18 +14,15 @@ public class HongKong_CloseCompany_Service {
     private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here']");
 
     public void selectCancelButton(){
-        WebElement cancelButtonElement = wait.until(ExpectedConditions.elementToBeClickable(cancelButton));
-        cancelButtonElement.click();
+        click(cancelButton);
     }
 
     public void selectButton(String id){
-        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-        buttonElement.click();
+        click(By.id(id));
     }
 
     public void sendKeyCustomRequest(String text){
-        WebElement textAreaElement = wait.until(ExpectedConditions.elementToBeClickable(textAreaCustom));
-        textAreaElement.sendKeys(text);
+        input(textAreaCustom, text);
     }
 
     public void selectCloseCompany(){

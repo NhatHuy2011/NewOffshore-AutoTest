@@ -1,18 +1,12 @@
 package org.newoffshore.pages.apply.service.hongkong;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class HongKong_CompanyRestoration_Service {
-    private final WebDriverWait wait;
-
+public class HongKong_CompanyRestoration_Service extends BasePage {
     public HongKong_CompanyRestoration_Service(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By continueButton = By.xpath("//button[normalize-space() = 'Cancel']");
@@ -20,13 +14,11 @@ public class HongKong_CompanyRestoration_Service {
     private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here']");
 
     public void clickCancel(){
-        WebElement cancelElement = wait.until(ExpectedConditions.elementToBeClickable(continueButton));
-        cancelElement.click();
+        click(continueButton);
     }
 
     public void sendKeyCustomRequest(String text){
-        WebElement customRequestElement = wait.until(ExpectedConditions.elementToBeClickable(textAreaCustom));
-        customRequestElement.sendKeys(text);
+        input(textAreaCustom, text);
     }
 
     public void selectCompanyRestoration(){

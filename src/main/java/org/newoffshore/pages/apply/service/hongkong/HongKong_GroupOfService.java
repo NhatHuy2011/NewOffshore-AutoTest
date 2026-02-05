@@ -1,28 +1,20 @@
 package org.newoffshore.pages.apply.service.hongkong;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class HongKong_GroupOfService {
-    private final WebDriverWait wait;
-
+public class HongKong_GroupOfService extends BasePage {
     public HongKong_GroupOfService(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     public void selectButton(String id){
-        WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-        buttonElement.click();
+        click(By.id(id));
     }
 
     public void selectGroupService(String id){
-        WebElement groupServiceElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(("label[for='"+ id +"']"))));
-        groupServiceElement.click();
+        click(By.cssSelector(("label[for='"+ id +"']")));
     }
 
     //Select Group Of Service - Form A Company
