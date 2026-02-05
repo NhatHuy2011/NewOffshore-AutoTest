@@ -4,8 +4,8 @@ import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class USA_FormACompany_Service extends BasePage {
-    public USA_FormACompany_Service(WebDriver driver) {
+public class USA_ReviveCompany_Service extends BasePage {
+    public USA_ReviveCompany_Service(WebDriver driver) {
         super(driver);
     }
 
@@ -19,15 +19,15 @@ public class USA_FormACompany_Service extends BasePage {
         click(By.id(id));
     }
 
-    public void selectIncorp(){
+    public void sendCustomRequest(String label, String text){
+        input(By.cssSelector("label[for='"+ label +"'] textarea"), text);
+    }
+
+    public void selectReviveCompany(){
         selectTerm();
-        selectButton("delaware");
-        selectButton("singapore-apply-form-next");
-        selectButton("standard_formation_us_llc_foreigner_delaware");
-        selectButton("beneficial_ownership_report");
-        selectButton("name_reservation");
         selectButton("us_llc_company_business_address");
-        selectButton("federal_ein_registration_foreigner");
+        selectButton("us_custom_request");
+        sendCustomRequest("us_custom_request", "Test");
         selectButton("singapore-apply-form-next");
     }
 }
