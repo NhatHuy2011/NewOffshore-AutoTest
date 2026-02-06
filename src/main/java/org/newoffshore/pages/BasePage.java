@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -32,8 +31,8 @@ public class BasePage {
         buttonElement.click();
     }
 
-    public void scrollToElement(By locator){
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
-        new Actions(driver).scrollToElement(element).click();
+    public void scrollToElementAndClick(By locator){
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        new Actions(driver).scrollToElement(element).click(element).perform();
     }
 }

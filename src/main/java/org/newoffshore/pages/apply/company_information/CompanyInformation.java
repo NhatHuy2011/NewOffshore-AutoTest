@@ -1,18 +1,12 @@
 package org.newoffshore.pages.apply.company_information;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class CompanyInformation {
-    private final WebDriverWait wait;
-
+public class CompanyInformation extends BasePage {
     public CompanyInformation(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By companyNameInput = By.cssSelector("#company_name input");
@@ -28,46 +22,34 @@ public class CompanyInformation {
     private final By companyInfoNextButton = By.id("company-info-next");
 
     public void sendKeyCompanyName(String companyName){
-        WebElement companyNameElement = wait.until(ExpectedConditions.elementToBeClickable(companyNameInput));
-        companyNameElement.sendKeys(companyName);
+        input(companyNameInput, companyName);
     }
 
     public void sendKeyBusinessDescription(String businessDescription){
-        WebElement businessDescriptionElement = wait.until(ExpectedConditions.elementToBeClickable(businessDescriptionInput));
-        businessDescriptionElement.sendKeys(businessDescription);
+        input(businessDescriptionInput, businessDescription);
     }
 
-    public void sendKeyShareCapital(int shareCaptital){
-        WebElement shareCapitalElement = wait.until(ExpectedConditions.elementToBeClickable(shareCapitalInput));
-        shareCapitalElement.sendKeys(String.valueOf(shareCaptital));
+    public void sendKeyShareCapital(String shareCaptital){
+        input(shareCapitalInput, shareCaptital);
     }
 
     public void selectCountryOfOperation(String country){
-        WebElement select = wait.until(ExpectedConditions.elementToBeClickable(countryOfOperationButton));
-        select.click();
-
-        WebElement option = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.xpath("//div[@data-slot='select-item']//span[normalize-space()='" + country + "']")
-                )
-        );
-        option.click();
+        click(countryOfOperationButton);
+        scrollToElementAndClick(By.xpath("//div[@data-slot='select-item']//span[normalize-space()='" + country + "']"));
     }
 
     public void sendKeySSICCode(String code){
-        WebElement ssicCodeElement = wait.until(ExpectedConditions.elementToBeClickable(ssicCodeInput));
-        ssicCodeElement.sendKeys(code);
+        input(ssicCodeInput, code);
     }
 
     public void selectNextButton(){
-        WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(companyInfoNextButton));
-        nextButtonElement.click();
+        click(companyInfoNextButton);
     }
 
     public void fillCompanyInformation() {
         sendKeyCompanyName("Cong Ty Co Phan The One Digi");
         sendKeyBusinessDescription("Tourism, Retail");
-        sendKeyShareCapital(10000);
+        sendKeyShareCapital("10000");
         selectCountryOfOperation("Vietnam");
         sendKeySSICCode("1234, 2345");
         selectNextButton();
