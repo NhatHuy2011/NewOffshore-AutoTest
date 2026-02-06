@@ -33,7 +33,7 @@ public class Singapore_MaintainCompanyCompanyTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get("https://global-offshore.org/en/singapore/company-info/OD_URPT6X5");
+        driver.get("https://global-offshore.org/en/singapore/company-info/OD_Y2UC7BV");
         driver.navigate().refresh();
     }
 

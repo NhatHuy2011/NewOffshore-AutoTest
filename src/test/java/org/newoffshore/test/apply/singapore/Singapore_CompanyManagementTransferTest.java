@@ -34,7 +34,7 @@ public class Singapore_CompanyManagementTransferTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get("https://global-offshore.org/en/singapore/company-info/OD_DXYV4HZ");
+        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
         driver.navigate().refresh();
     }
 
