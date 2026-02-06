@@ -37,7 +37,7 @@ public class ContactInformation extends BasePage {
 
     public void fillContactInformation() {
         setFullnameInput("Nhat Huy");
-        setEmailInput("huydt0408@gmail.com");
+        setEmailInput("huydt04082003@gmail.com");
         setPhoneInput(2015550123);
         setBusinessDescription("Tourism");
         clickNext();

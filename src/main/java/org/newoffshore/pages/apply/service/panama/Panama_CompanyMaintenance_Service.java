@@ -22,6 +22,7 @@ public class Panama_CompanyMaintenance_Service extends BasePage {
         selectButton("custom_amendment_to_company_m_and_a");
         sendCustomRequest("custom_amendment_to_company_m_and_a", "Test");
         selectButton("increase_of_authorized_capitals");
+        sendCustomRequest("increase_of_authorized_capitals", "Test");
         selectButton("courier_dispatch_services");
         sendCustomRequest("courier_dispatch_services", "Test");
         selectButton("pa_custom_request");

@@ -1,18 +1,12 @@
 package org.newoffshore.pages.apply.payment;
 
+import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class PaymentInformation {
-    private final WebDriverWait wait;
-
+public class PaymentInformation extends BasePage {
     public PaymentInformation(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By termAndPrivacyButton = By.id("accept");
@@ -22,23 +16,19 @@ public class PaymentInformation {
     private final By completePaymentButton = By.xpath("//button[normalize-space() = 'I’ve Completed the Payment']");
 
     public void selectPaymentMethod(String id){
-        WebElement paymentMethodElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("label[for='" + id + "']")));
-        paymentMethodElement.click();
+        click(By.cssSelector("label[for='" + id + "']"));
     }
 
     public void selectTermAndPrivacy(){
-        WebElement termElement = wait.until(ExpectedConditions.elementToBeClickable(termAndPrivacyButton));
-        termElement.click();
+        click(termAndPrivacyButton);
     }
 
     public void selectProceedToPayment(){
-        WebElement proceedToPaymentElement = wait.until(ExpectedConditions.elementToBeClickable(proceedToPaymentButton));
-        proceedToPaymentElement.click();
+        click(proceedToPaymentButton);
     }
 
     public void selectCompletedPayment(){
-        WebElement completedElement = wait.until(ExpectedConditions.elementToBeClickable(completePaymentButton));
-        completedElement.click();
+        click(completePaymentButton);
     }
 
     public void fillPaymentInformation(){
