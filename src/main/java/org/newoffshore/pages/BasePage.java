@@ -26,6 +26,11 @@ public class BasePage {
         inputElement.sendKeys(text);
     }
 
+    public void inputFile(By locator, String path){
+        WebElement inputElement = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        inputElement.sendKeys(path);
+    }
+
     public void click(By locator){
         WebElement buttonElement = wait.until(ExpectedConditions.elementToBeClickable(locator));
         buttonElement.click();

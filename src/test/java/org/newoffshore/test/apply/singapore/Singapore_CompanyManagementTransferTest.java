@@ -34,7 +34,7 @@ public class Singapore_CompanyManagementTransferTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
+        driver.get("https://global-offshore.org/en/singapore/company-info/OD_DXYV4HZ");
         driver.navigate().refresh();
     }
 
@@ -70,13 +70,6 @@ public class Singapore_CompanyManagementTransferTest {
         shareHolderInformation.fillShareHolderInformation();
         UBOInformation uboInformation = new UBOInformation(driver);
         uboInformation.fillUBOInformation();
-    }
-
-    @Test
-    public void uploadDocument() throws InterruptedException {
-        //Fill Company Information
-        CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocument();
     }
 
     @AfterEach

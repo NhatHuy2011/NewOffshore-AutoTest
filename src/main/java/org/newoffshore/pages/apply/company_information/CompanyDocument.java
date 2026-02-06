@@ -1,20 +1,17 @@
 package org.newoffshore.pages.apply.company_information;
 
 import org.newoffshore.constant.Constant;
+import org.newoffshore.pages.BasePage;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+import java.io.File;
 
-public class CompanyDocument {
-    private final WebDriverWait wait;
-
+public class CompanyDocument extends BasePage {
     public CompanyDocument(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By documentInput = By.cssSelector("input[type='file']");
@@ -22,19 +19,27 @@ public class CompanyDocument {
     private final By nextButton = By.id("document-list-next");
 
     public void uploadDocumentCompany(String path){
-        WebElement documentInputElement = wait.until(ExpectedConditions.presenceOfElementLocated(documentInput));
-        documentInputElement.sendKeys(path);
+        inputFile(documentInput, path);
+    }
+
+    public void waitForFileAppearInTable(String fileName) {
+        By fileNameCell = By.xpath(
+                "//tr[@data-slot='table-row']//td[normalize-space()='" + fileName + "']"
+        );
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(fileNameCell));
     }
 
     public void clickNextButton(){
-        WebElement nextButtonElement = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
-        nextButtonElement.click();
+        click(nextButton);
     }
 
-    public void fillCompanyDocument() throws InterruptedException {
-        uploadDocumentCompany(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+    public void fillCompanyDocument() {
+        String path = ConfigReader.getResourceFilePath(Constant.IMAGE_PATH);
+        File file = new File(path);
 
-        Thread.sleep(2000);
+        uploadDocumentCompany(path);
+        waitForFileAppearInTable(file.getName());
 
         clickNextButton();
     }
