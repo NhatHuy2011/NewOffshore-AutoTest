@@ -81,11 +81,11 @@ public class UBOInformation {
         sendKeyPhoneNumberUBO("201-555-0123");
         sendKeyPercentage(100);
         Thread.sleep(1000);
-        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
         clickNextButton();
     }

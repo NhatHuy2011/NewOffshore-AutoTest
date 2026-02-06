@@ -37,4 +37,8 @@ public class PaymentInformation extends BasePage {
         selectProceedToPayment();
         selectCompletedPayment();
     }
+
+    public void fillPaymentNotSelectMethod(){
+        selectCompletedPayment();
+    }
 }

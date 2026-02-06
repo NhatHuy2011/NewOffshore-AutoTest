@@ -1,21 +1,17 @@
 package org.newoffshore.pages.apply.company_information.order_addons.singapore;
 
 import org.newoffshore.constant.Constant;
+import org.newoffshore.pages.BasePage;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.URISyntaxException;
-import java.time.Duration;
+import java.io.File;
 
-public class MaintainCompany_CompanyInfo {
-    private final WebDriverWait wait;
-
+public class MaintainCompany_CompanyInfo extends BasePage {
     public MaintainCompany_CompanyInfo(WebDriver driver) {
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver);
     }
 
     private final By inputCompanyNameChange = By.name("change_company_name.company_name");
@@ -33,49 +29,54 @@ public class MaintainCompany_CompanyInfo {
     private final By nextButton = By.id("document-list-next");
 
     public void setInputCompanyNameChange(String companyName){
-        WebElement companyNameChangeElement = wait.until(ExpectedConditions.elementToBeClickable(inputCompanyNameChange));
-        companyNameChangeElement.sendKeys(companyName);
+        input(inputCompanyNameChange, companyName);
     }
 
     public void setInputBusinessActivityChange(String businessActivity){
-        WebElement businessActivityElement = wait.until(ExpectedConditions.elementToBeClickable(inputBusinessActivityChange));
-        businessActivityElement.sendKeys(businessActivity);
+        input(inputBusinessActivityChange, businessActivity);
     }
 
     public void setInputSSICCodeChange(String ssicCode){
-        WebElement ssicCodeElement = wait.until(ExpectedConditions.elementToBeClickable(inputSSICCodeChange));
-        ssicCodeElement.sendKeys(ssicCode);
+        input(inputSSICCodeChange, ssicCode);
     }
 
     public void setInputOfficeAddressChange(String officeAddress){
-        WebElement officeAddressElement = wait.until(ExpectedConditions.elementToBeClickable(inputOfficeAddressChange));
-        officeAddressElement.sendKeys(officeAddress);
+        input(inputOfficeAddressChange, officeAddress);
     }
 
     public void setInputProofOfAddressChange(String path){
-        WebElement proofOfAddressElement = wait.until(ExpectedConditions.presenceOfElementLocated(inputProofOfAddressChange));
-        proofOfAddressElement.sendKeys(path);
+        inputFile(inputProofOfAddressChange, path);
     }
 
-    public void setInputIncreaseShareChange(int share){
-        WebElement increaseShareElement = wait.until(ExpectedConditions.elementToBeClickable(inputIncreaseShareChange));
-        increaseShareElement.sendKeys(String.valueOf(share));
+    public void waitForFileAppear(String fileName){
+        By uploadedFileName = By.xpath(
+                "//div[@id='change_office_address.proof_of_address']" +
+                        "//p[normalize-space()='" + fileName + "']"
+        );
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(uploadedFileName));
+    }
+
+    public void setInputIncreaseShareChange(String share){
+        input(inputIncreaseShareChange, share);
     }
 
     public void clickNextButton(){
-        WebElement nextElement = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
-        nextElement.click();
+        click(nextButton);
     }
 
-    public void setCompanyInfoChangeMaintain() throws InterruptedException {
+    public void setCompanyInfoChangeMaintain() {
         setInputCompanyNameChange("The One Digi");
         setInputBusinessActivityChange("Tourism");
         setInputSSICCodeChange("1234, 2345");
         setInputOfficeAddressChange("40 Thien Phuoc");
-        setInputProofOfAddressChange(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
-        Thread.sleep(1000);
-        setInputIncreaseShareChange(10000);
+
+        String path = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
+        File file = new File(path);
+        setInputProofOfAddressChange(path);
+        waitForFileAppear(file.getName());
+
+        setInputIncreaseShareChange("10000");
         clickNextButton();
-        Thread.sleep(1000);
     }
 }

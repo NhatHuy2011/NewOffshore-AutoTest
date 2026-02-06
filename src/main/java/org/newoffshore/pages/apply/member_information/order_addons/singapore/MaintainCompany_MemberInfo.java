@@ -73,17 +73,17 @@ public class MaintainCompany_MemberInfo {
 
     public void setPassportDirector(){
         WebElement passportElement = wait.until(ExpectedConditions.presenceOfElementLocated(passportDirector));
-        passportElement.sendKeys(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        passportElement.sendKeys(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
     }
 
     public void setAddressProofDirector(){
         WebElement addressProofElement = wait.until(ExpectedConditions.presenceOfElementLocated(addressProofDirector));
-        addressProofElement.sendKeys(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        addressProofElement.sendKeys(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
     }
 
     public void setSelfieImageDirector(){
         WebElement selfieImageElement = wait.until(ExpectedConditions.presenceOfElementLocated(selfieImageDirector));
-        selfieImageElement.sendKeys(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        selfieImageElement.sendKeys(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
     }
 
     public void setResignationDirector(String directorName){

@@ -35,7 +35,7 @@ public class CompanyDocument extends BasePage {
     }
 
     public void fillCompanyDocument() {
-        String path = ConfigReader.getResourceFilePath(Constant.IMAGE_PATH);
+        String path = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
         File file = new File(path);
 
         uploadDocumentCompany(path);

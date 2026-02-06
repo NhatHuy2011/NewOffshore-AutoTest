@@ -3,7 +3,6 @@ package org.newoffshore.pages.apply.member_information;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -93,11 +92,11 @@ public class ShareHolderInformation {
         sendKeyPhoneNumbershareholder("201-555-0123");
         sendKeyShare(10000);
         Thread.sleep(1000);
-        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeyPassportUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeyAddressProofUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
-        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.IMAGE_PATH));
+        sendKeySelfieImageUpload(ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH));
         Thread.sleep(1000);
         clickNextButton();
     }
