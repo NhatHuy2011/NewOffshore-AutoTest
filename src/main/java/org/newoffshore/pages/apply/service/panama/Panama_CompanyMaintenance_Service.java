@@ -35,12 +35,12 @@ public class Panama_CompanyMaintenance_Service extends BasePage {
         selectButton("certified_true_copy_of_1_company_certificate_by_the_registry");
         selectButton("certified_true_copy_of_1_company_document_by_register_agent");
         selectButton("certified_true_copy_of_1_company_document_by_cpa");
-        selectButton("change_of_director_filling_amendment_to_articles_of_incorportions_apostilled_certified");
-        selectButton("change_of_director_filling_amendment_to_articles_of_incorportions_without_apostilled");
-        selectButton("change_of_shareholder_filling_amendment_to_articles_of_incorportions_apostilled_certified");
-        selectButton("change_of_shareholder_filling_amendment_to_articles_of_incorportions_without_apostilled");
-        selectButton("change_of_ubo_filling_amendment_to_articles_of_incorportions_without_apostilled");
-        selectButton("additional_member_compliance_for_company_structure_change");
+        //selectButton("change_of_director_filling_amendment_to_articles_of_incorportions_apostilled_certified");
+        //selectButton("change_of_director_filling_amendment_to_articles_of_incorportions_without_apostilled");
+        //selectButton("change_of_shareholder_filling_amendment_to_articles_of_incorportions_apostilled_certified");
+        //selectButton("change_of_shareholder_filling_amendment_to_articles_of_incorportions_without_apostilled");
+        //selectButton("change_of_ubo_filling_amendment_to_articles_of_incorportions_without_apostilled");
+        //selectButton("additional_member_compliance_for_company_structure_change");
         selectButton("update_m_and_a_without_apostilled");
         selectButton("update_article_of_incorporations_without_apostilled");
         selectButton("update_article_of_incorporation_with_apostilled");
