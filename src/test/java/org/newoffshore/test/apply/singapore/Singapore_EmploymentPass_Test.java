@@ -17,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_EmploymentPassTest {
+public class Singapore_EmploymentPass_Test {
     private WebDriver driver;
 
     @BeforeEach

@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class USA_ServiceDetailTest {
+public class USA_ServiceDetail_Test {
     private WebDriver driver;
 
     @BeforeEach

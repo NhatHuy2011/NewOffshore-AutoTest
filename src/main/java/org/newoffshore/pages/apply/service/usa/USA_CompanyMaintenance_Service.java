@@ -24,8 +24,8 @@ public class USA_CompanyMaintenance_Service extends BasePage {
         selectButton("expedite_service_of_company_document");
         selectButton("certified_true_copy_1_company_certificate_by_secretary_of_state");
         selectButton("expedite_1_day_service_of_company_document");
-        selectButton("preparing_change_member_documents_and_filing_article_of_amendment");
-        selectButton("additional_member_compliance_for_llc_structure_change");
+        //selectButton("preparing_change_member_documents_and_filing_article_of_amendment");
+        //selectButton("additional_member_compliance_for_llc_structure_change");
         selectButton("expedite_service_of_company_certificate");
         selectButton("expedite_1_day_service_of_company_certificate");
         selectButton("custom_amendments_to_operating_agreements");

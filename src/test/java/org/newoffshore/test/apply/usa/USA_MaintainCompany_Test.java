@@ -1,15 +1,16 @@
-package org.newoffshore.test.apply.singapore;
+package org.newoffshore.test.apply.usa;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
-import org.newoffshore.pages.apply.company_information.order_addons.singapore.Singapore_MaintainCompany_Step5;
+import org.newoffshore.pages.apply.company_information.order_addons.usa.USA_MaintainCompany_Step5;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyMaintenance_Service;
-import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
+import org.newoffshore.pages.apply.service.usa.USA_CompanyMaintenance_Service;
+import org.newoffshore.pages.apply.service.usa.USA_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_MaintainCompanyCompanyTest {
+public class USA_MaintainCompany_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -31,13 +32,11 @@ public class Singapore_MaintainCompanyCompanyTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get("https://global-offshore.org/en/singapore/company-info/OD_KPIDH32");
+        driver.get(ConfigReader.getUrlOffer(Constant.USA));
         driver.navigate().refresh();
     }
-
-    //Maintain Company
     @Test
-    public void selectMaintain_For_Local_NoAccounting() throws InterruptedException {
+    public void testUSAMaintain() throws InterruptedException {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -47,34 +46,21 @@ public class Singapore_MaintainCompanyCompanyTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
-        singaporeGroupOfService.selectGroupCompanyMaintenance();
+        USA_GroupOfService usaGroupOfService = new USA_GroupOfService(driver);
+        usaGroupOfService.selectGroupCompanyMaintenance();
 
-        Singapore_CompanyMaintenance_Service companyMaintenanceServiceDetail = new Singapore_CompanyMaintenance_Service(driver);
-        companyMaintenanceServiceDetail.selectMaintain_For_Local_NoAccounting();
+        USA_CompanyMaintenance_Service usaCompanyMaintenanceService = new USA_CompanyMaintenance_Service(driver);
+        usaCompanyMaintenanceService.selectCompanyMaintenance();
 
         //Select Payment Method
         PaymentInformation paymentInformation = new PaymentInformation(driver);
         paymentInformation.fillPaymentInformation();
 
-        //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompany("The One Digi Singapore");
+        selectCompany.selectCompany("The One Digi USA");
 
-        //Fill Company Info
-        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
-        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
-    }
-
-    @Test
-    public void testCompanyMember() throws InterruptedException {
-        //Select Company
-        SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompany("The One Digi Singapore");
-
-        //Fill Company Info
-        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
-        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
+        USA_MaintainCompany_Step5 usaMaintainStep5 = new USA_MaintainCompany_Step5(driver);
+        usaMaintainStep5.setUSACompanyMaintainStep5();
     }
 
     @AfterEach

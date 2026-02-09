@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class HongKong_MaintainCompanyTest {
+public class HongKong_MaintainCompany_Test {
     private WebDriver driver;
 
     @BeforeEach

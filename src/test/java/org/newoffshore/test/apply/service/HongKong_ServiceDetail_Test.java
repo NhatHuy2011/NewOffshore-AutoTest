@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.panama.*;
+import org.newoffshore.pages.apply.service.hongkong.*;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Panama_ServiceDetailTest {
+public class HongKong_ServiceDetail_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -28,13 +28,13 @@ public class Panama_ServiceDetailTest {
 
         driver.manage().addCookie(userSession);
 
-        driver.get(ConfigReader.getUrlOffer(Constant.PANAMA));
+        driver.get(ConfigReader.getUrlOffer(Constant.HONGKONG));
         driver.navigate().refresh();
     }
 
     //Form A Company
     @Test
-    public void selectFormACompany(){
+    public void selectIncorp_Has_Accounting() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -44,16 +44,16 @@ public class Panama_ServiceDetailTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupFormACompany();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupFormACompany();
 
-        Panama_FormACompany_Service panamaFormACompanyService = new Panama_FormACompany_Service(driver);
-        panamaFormACompanyService.selectIncorp();
+        HongKong_FormACompany_Service formACompanyServiceDetail = new HongKong_FormACompany_Service(driver);
+        formACompanyServiceDetail.selectIncorp_Has_Accounting();
     }
 
-    //Transfer In
+    //Company Management Transfer
     @Test
-    public void selectTransferIn(){
+    public void selectCompanyManagementTransfer_Has_Accounting() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -63,11 +63,11 @@ public class Panama_ServiceDetailTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupTransferIn();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCompanyManagementTransfer();
 
-        Panama_TransferIn_Service panamaTransferInService = new Panama_TransferIn_Service(driver);
-        panamaTransferInService.selectTransferIn();
+        HongKong_CompanyManagementTransfer_Service transferService = new HongKong_CompanyManagementTransfer_Service(driver);
+        transferService.selectCompanyManagementTransfer_Has_Accounting();
     }
 
     //Company Maintenance
@@ -82,16 +82,16 @@ public class Panama_ServiceDetailTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupCompanyMaintenance();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCompanyMaintenance();
 
-        Panama_CompanyMaintenance_Service panamaCompanyMaintenanceService = new Panama_CompanyMaintenance_Service(driver);
-        panamaCompanyMaintenanceService.selectCompanyMaintenance();
+        HongKong_CompanyMaintain_Service companyMaintainServiceDetail = new HongKong_CompanyMaintain_Service(driver);
+        companyMaintainServiceDetail.selectCompanyMaintain();
     }
 
-    //Nominee Service
+    //Company Restoration
     @Test
-    public void selectNomineeService(){
+    public void selectCompanyRestoration(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -101,11 +101,49 @@ public class Panama_ServiceDetailTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupNomineeService();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCompanyRestoration();
 
-        Panama_Nominee_Service panamaNomineeService = new Panama_Nominee_Service(driver);
-        panamaNomineeService.selectNomineeService();
+        HongKong_CompanyRestoration_Service companyRestorationServiceDetail = new HongKong_CompanyRestoration_Service(driver);
+        companyRestorationServiceDetail.selectCompanyRestoration();
+    }
+
+    //Accouting
+    @Test
+    public void selectAccounting(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
+
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Select Group Of Service
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupAccounting();
+
+        HongKong_Accounting_Service accountingServiceDetail = new HongKong_Accounting_Service(driver);
+        accountingServiceDetail.selectAccounting();
+    }
+
+    //Business Bank
+    @Test
+    public void selectBusinessBank(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
+
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Select Group Of Service
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupBusinessBank();
+
+        HongKong_BusinessBank_Service businessBankServiceDetail = new HongKong_BusinessBank_Service(driver);
+        businessBankServiceDetail.selectBusinessBank();
     }
 
     //Close Company
@@ -120,49 +158,11 @@ public class Panama_ServiceDetailTest {
         speakAndCheckout.selectCheckOut();
 
         //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupCloseCompany();
+        HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
+        hongKongGroupOfService.selectGroupCloseCompany();
 
-        Panama_CloseCompany_Service panamaCloseCompanyService = new Panama_CloseCompany_Service(driver);
-        panamaCloseCompanyService.selectCloseCompany();
-    }
-
-    //Restore Company
-    @Test
-    public void selectRestoreCompany(){
-        //Contact Information
-        ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.fillContactInformation();
-
-        //Speak And Checkout
-        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOut();
-
-        //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupCompanyRestoration();
-
-        Panama_RestoreCompany_Service panamaRestoreCompanyService = new Panama_RestoreCompany_Service(driver);
-        panamaRestoreCompanyService.selectRestoreCompany();
-    }
-
-    //Business Banking
-    @Test
-    public void selectBusinessBankingCompany(){
-        //Contact Information
-        ContactInformation contactInformationPage = new ContactInformation(driver);
-        contactInformationPage.fillContactInformation();
-
-        //Speak And Checkout
-        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-        speakAndCheckout.selectCheckOut();
-
-        //Select Group Of Service
-        Panama_GroupOfService panamaGroupOfService = new Panama_GroupOfService(driver);
-        panamaGroupOfService.selectGroupBusinessBank();
-
-        Panama_BusinessBanking_Service panamaBusinessBankingService = new Panama_BusinessBanking_Service(driver);
-        panamaBusinessBankingService.selectBusinessBanking();
+        HongKong_CloseCompany_Service closeCompanyServiceDetail = new HongKong_CloseCompany_Service(driver);
+        closeCompanyServiceDetail.selectCloseCompany();
     }
 
     @AfterEach
