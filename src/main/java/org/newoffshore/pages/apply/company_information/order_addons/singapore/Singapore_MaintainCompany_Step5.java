@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.File;
 
-public class MaintainCompany_CompanyInfo extends BasePage {
-    public MaintainCompany_CompanyInfo(WebDriver driver) {
+public class Singapore_MaintainCompany_Step5 extends BasePage {
+    public Singapore_MaintainCompany_Step5(WebDriver driver) {
         super(driver);
     }
 
@@ -65,7 +65,7 @@ public class MaintainCompany_CompanyInfo extends BasePage {
         click(nextButton);
     }
 
-    public void setCompanyInfoChangeMaintain() {
+    public void setSingaporeMaintainCompanyStep5() {
         setInputCompanyNameChange("The One Digi");
         setInputBusinessActivityChange("Tourism");
         setInputSSICCodeChange("1234, 2345");

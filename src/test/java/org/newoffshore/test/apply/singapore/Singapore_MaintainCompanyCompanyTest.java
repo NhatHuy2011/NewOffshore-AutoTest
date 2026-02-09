@@ -3,11 +3,9 @@ package org.newoffshore.test.apply.singapore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
-import org.newoffshore.pages.apply.company_information.order_addons.singapore.MaintainCompany_CompanyInfo;
+import org.newoffshore.pages.apply.company_information.order_addons.singapore.Singapore_MaintainCompany_Step5;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
-import org.newoffshore.pages.apply.member_information.order_addons.singapore.MaintainCompany_MemberInfo;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
 import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyMaintenance_Service;
@@ -64,8 +62,8 @@ public class Singapore_MaintainCompanyCompanyTest {
         selectCompany.selectCompany("The One Digi Singapore");
 
         //Fill Company Info
-        MaintainCompany_CompanyInfo maintainCompanyCompanyInfo = new MaintainCompany_CompanyInfo(driver);
-        maintainCompanyCompanyInfo.setCompanyInfoChangeMaintain();
+        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
+        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
     }
 
     @Test
@@ -75,8 +73,8 @@ public class Singapore_MaintainCompanyCompanyTest {
         selectCompany.selectCompany("The One Digi Singapore");
 
         //Fill Company Info
-        MaintainCompany_CompanyInfo maintainCompanyCompanyInfo = new MaintainCompany_CompanyInfo(driver);
-        maintainCompanyCompanyInfo.setCompanyInfoChangeMaintain();
+        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
+        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
     }
 
     @AfterEach
