@@ -22,14 +22,14 @@ public class Singapore_CompanyMaintenance_Service extends BasePage {
     public void selectMaintain_For_Local_NoAccounting(){
         selectButton("yes_local_director_for_renew");
         selectButton("singapore-apply-form-next");
-        selectButton("appointment_director");
-        selectButton("resignation_director");
-        selectButton("update_director_shareholder_information");
+        //selectButton("appointment_director");
+        //selectButton("resignation_director");
+        //selectButton("update_director_shareholder_information");
         selectButton("change_business_activity");
         selectButton("change_company_name");
         selectButton("change_office_address");
         selectButton("increase_share_capital");
-        selectButton("transfer_shares");
+        //selectButton("transfer_shares");
         selectButton("extra_kyc_requirement");
         selectButton("custom_request");
         sendKeyCustomRequestMaintain("Test");

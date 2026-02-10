@@ -22,8 +22,12 @@ public class SelectCompany extends BasePage {
         click(nextButton);
     }
 
-    public void selectCompany(String companyName) {
+    public void selectCompanyAndNext(String companyName) {
         selectCompanyOption(companyName);
         clickNextButton();
+    }
+
+    public void selectCompanyNotNext(String companyName){
+        selectCompanyOption(companyName);
     }
 }

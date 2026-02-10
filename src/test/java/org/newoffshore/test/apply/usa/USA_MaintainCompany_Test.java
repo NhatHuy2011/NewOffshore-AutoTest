@@ -57,7 +57,7 @@ public class USA_MaintainCompany_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompany("The One Digi USA");
+        selectCompany.selectCompanyAndNext("The One Digi USA");
 
         USA_MaintainCompany_Step5 usaMaintainStep5 = new USA_MaintainCompany_Step5(driver);
         usaMaintainStep5.setUSACompanyMaintainStep5();

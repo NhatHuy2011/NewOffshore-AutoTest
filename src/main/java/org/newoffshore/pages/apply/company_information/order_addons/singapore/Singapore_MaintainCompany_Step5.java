@@ -78,5 +78,6 @@ public class Singapore_MaintainCompany_Step5 extends BasePage {
 
         setInputIncreaseShareChange("10000");
         clickNextButton();
+        scrollToElementAndClick(By.id("member-info-next"));
     }
 }

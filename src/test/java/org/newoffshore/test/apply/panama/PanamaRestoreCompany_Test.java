@@ -37,7 +37,7 @@ public class PanamaRestoreCompany_Test {
     }
 
     @Test
-    public void testRestoreCompanyPanama() throws InterruptedException {
+    public void testRestoreCompanyPanama() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -58,7 +58,7 @@ public class PanamaRestoreCompany_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompany("The One Digi Panama");
+        selectCompany.selectCompanyAndNext("The One Digi Panama");
 
         Panama_RestoreCompany panamaRestoreCompany = new Panama_RestoreCompany(driver);
         panamaRestoreCompany.setPanamaRestoreCompany();

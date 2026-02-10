@@ -5,11 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
-import org.newoffshore.pages.apply.company_information.order_addons.singapore.Singapore_MaintainCompany_Step5;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyMaintenance_Service;
+import org.newoffshore.pages.apply.service.singapore.Singapore_BusinessBanking_Service;
 import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
@@ -18,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_MaintainCompanyCompany_Test {
+public class Singapore_BusinessBank_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -36,9 +35,8 @@ public class Singapore_MaintainCompanyCompany_Test {
         driver.navigate().refresh();
     }
 
-    //Maintain Company
     @Test
-    public void selectMaintain_For_Local_NoAccounting() throws InterruptedException {
+    public void selectBusinessBanking(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -49,10 +47,10 @@ public class Singapore_MaintainCompanyCompany_Test {
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
-        singaporeGroupOfService.selectGroupCompanyMaintenance();
+        singaporeGroupOfService.selectGroupBusinessBank();
 
-        Singapore_CompanyMaintenance_Service companyMaintenanceServiceDetail = new Singapore_CompanyMaintenance_Service(driver);
-        companyMaintenanceServiceDetail.selectMaintain_For_Local_NoAccounting();
+        Singapore_BusinessBanking_Service businessBankingServiceDetail = new Singapore_BusinessBanking_Service(driver);
+        businessBankingServiceDetail.selectBusinessBanking();
 
         //Select Payment Method
         PaymentInformation paymentInformation = new PaymentInformation(driver);
@@ -61,22 +59,7 @@ public class Singapore_MaintainCompanyCompany_Test {
         //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
         selectCompany.selectCompanyAndNext("The One Digi Singapore");
-
-        //Fill Company Info
-        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
-        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
     }
-
-//    @Test
-//    public void testCompanyMember() throws InterruptedException {
-//        //Select Company
-//        SelectCompany selectCompany = new SelectCompany(driver);
-//        selectCompany.selectCompanyAndNext("The One Digi Singapore");
-//
-//        //Fill Company Info
-//        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
-//        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
-//    }
 
     @AfterEach
     public void tearDown() {
