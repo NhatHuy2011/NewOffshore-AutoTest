@@ -110,5 +110,6 @@ public class HongKong_MaintainCompany_Step5 extends BasePage {
         setCourierPhoneInput("2550122345");
         setCourierDeliveryInput("40 Thien Phuoc");
         selectButton("document-list-next");
+        selectButton("member-info-next");
     }
 }

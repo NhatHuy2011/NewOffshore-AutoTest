@@ -5,11 +5,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
-import org.newoffshore.pages.apply.company_information.order_addons.hongkong.HongKong_MaintainCompany_Step5;
+import org.newoffshore.pages.apply.company_information.order_addons.hongkong.HongKong_RestoreCompany_Step5;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.hongkong.HongKong_CompanyMaintain_Service;
+import org.newoffshore.pages.apply.service.hongkong.HongKong_CompanyRestoration_Service;
 import org.newoffshore.pages.apply.service.hongkong.HongKong_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
@@ -18,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class HongKong_MaintainCompany_Test {
+public class HongKong_RestoreCompany_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -37,7 +37,7 @@ public class HongKong_MaintainCompany_Test {
     }
 
     @Test
-    public void testStep5HongKong() {
+    public void selectCompanyRestoration() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -48,20 +48,19 @@ public class HongKong_MaintainCompany_Test {
 
         //Select Group Of Service
         HongKong_GroupOfService hongKongGroupOfService = new HongKong_GroupOfService(driver);
-        hongKongGroupOfService.selectGroupCompanyMaintenance();
+        hongKongGroupOfService.selectGroupCompanyRestoration();
 
-        HongKong_CompanyMaintain_Service companyMaintainServiceDetail = new HongKong_CompanyMaintain_Service(driver);
-        companyMaintainServiceDetail.selectCompanyMaintain();
+        HongKong_CompanyRestoration_Service companyRestorationServiceDetail = new HongKong_CompanyRestoration_Service(driver);
+        companyRestorationServiceDetail.selectCompanyRestoration();
 
-        //Select Payment Method
         PaymentInformation paymentInformation = new PaymentInformation(driver);
-        paymentInformation.fillPaymentInformation();
+        paymentInformation.fillPaymentNotSelectMethod();
 
         SelectCompany selectCompany = new SelectCompany(driver);
         selectCompany.selectCompanyAndNext("The One Digi HongKong");
 
-        HongKong_MaintainCompany_Step5 hongKongStep5 = new HongKong_MaintainCompany_Step5(driver);
-        hongKongStep5.setHongKongMaintainCompanyStep5();
+        HongKong_RestoreCompany_Step5 hongKongRestoreStep5 = new HongKong_RestoreCompany_Step5(driver);
+        hongKongRestoreStep5.setHongKongRestoreCompany();
     }
 
     @AfterEach

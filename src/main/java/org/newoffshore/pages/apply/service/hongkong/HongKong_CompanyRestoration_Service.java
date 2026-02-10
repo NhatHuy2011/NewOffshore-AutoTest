@@ -13,6 +13,8 @@ public class HongKong_CompanyRestoration_Service extends BasePage {
 
     private final By textAreaCustom = By.xpath("//textarea[@placeholder = 'Please enter a description here']");
 
+    private final By nextButton = By.id("singapore-apply-form-next");
+
     public void clickCancel(){
         click(continueButton);
     }
@@ -21,8 +23,13 @@ public class HongKong_CompanyRestoration_Service extends BasePage {
         input(textAreaCustom, text);
     }
 
+    public void clickNextButton(){
+        click(nextButton);
+    }
+
     public void selectCompanyRestoration(){
         clickCancel();
         sendKeyCustomRequest("Test");
+        clickNextButton();
     }
 }
