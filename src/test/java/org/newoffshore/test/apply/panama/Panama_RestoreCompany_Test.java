@@ -18,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class PanamaRestoreCompany_Test {
+public class Panama_RestoreCompany_Test {
     private WebDriver driver;
 
     @BeforeEach

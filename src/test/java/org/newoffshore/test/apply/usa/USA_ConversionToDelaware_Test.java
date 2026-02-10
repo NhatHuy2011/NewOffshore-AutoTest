@@ -5,11 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.company_information.SelectCompany;
-import org.newoffshore.pages.apply.company_information.order_addons.usa.USA_MaintainCompany_Step5;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.usa.USA_CompanyMaintenance_Service;
+import org.newoffshore.pages.apply.service.usa.USA_ConversionToDelaware_Service;
 import org.newoffshore.pages.apply.service.usa.USA_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
@@ -18,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class USA_MaintainCompany_Test {
+public class USA_ConversionToDelaware_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -37,7 +36,7 @@ public class USA_MaintainCompany_Test {
     }
 
     @Test
-    public void testUSAMaintain() throws InterruptedException {
+    public void selectConversionToDelaware(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -48,20 +47,16 @@ public class USA_MaintainCompany_Test {
 
         //Select Group Of Service
         USA_GroupOfService usaGroupOfService = new USA_GroupOfService(driver);
-        usaGroupOfService.selectGroupCompanyMaintenance();
+        usaGroupOfService.selectGroupConversionOfUSLLC();
 
-        USA_CompanyMaintenance_Service usaCompanyMaintenanceService = new USA_CompanyMaintenance_Service(driver);
-        usaCompanyMaintenanceService.selectCompanyMaintenance();
+        USA_ConversionToDelaware_Service usaConversionToDelawareService = new USA_ConversionToDelaware_Service(driver);
+        usaConversionToDelawareService.selectConversionToDelaware();
 
-        //Select Payment Method
         PaymentInformation paymentInformation = new PaymentInformation(driver);
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
         selectCompany.selectCompanyAndNext("The One Digi USA");
-
-        USA_MaintainCompany_Step5 usaMaintainStep5 = new USA_MaintainCompany_Step5(driver);
-        usaMaintainStep5.setUSACompanyMaintainStep5();
     }
 
     @AfterEach
