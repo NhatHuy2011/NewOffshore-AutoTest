@@ -61,7 +61,7 @@ public class Singapore_CompanyManagementTransfer_Test {
 
         //Fill Company Information
         CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocument();
+        companyDocument.fillCompanyDocumentAndNext();
 
         //Member Information
         DirectorInformation directorInformation = new DirectorInformation(driver);

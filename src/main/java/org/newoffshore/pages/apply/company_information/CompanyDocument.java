@@ -34,7 +34,7 @@ public class CompanyDocument extends BasePage {
         click(nextButton);
     }
 
-    public void fillCompanyDocument() {
+    public void fillCompanyDocumentAndNext() {
         String path = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
         File file = new File(path);
 
@@ -42,5 +42,13 @@ public class CompanyDocument extends BasePage {
         waitForFileAppearInTable(file.getName());
 
         clickNextButton();
+    }
+
+    public void fillCompanyDocumentNotNext() {
+        String path = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
+        File file = new File(path);
+
+        uploadDocumentCompany(path);
+        waitForFileAppearInTable(file.getName());
     }
 }

@@ -63,7 +63,7 @@ public class EmploymentPass_ApplicantInformation extends BasePage {
         selectButton("yes-annualTaxReturn");
         selectButton("select-company-next");
         CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocument();
+        companyDocument.fillCompanyDocumentAndNext();
 
         String passportPath = ConfigReader.getResourceFilePath(Constant.PASSPORT_IMAGE_PATH);
         File passPortFile = new File(passportPath);

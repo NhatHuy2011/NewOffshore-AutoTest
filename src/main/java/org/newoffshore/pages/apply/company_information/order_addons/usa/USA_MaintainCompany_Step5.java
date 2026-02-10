@@ -68,7 +68,7 @@ public class USA_MaintainCompany_Step5 extends BasePage {
         selectButton("yes-hasUSOperations");
         selectButton("select-hasUSOperations-next");
         CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocument();
+        companyDocument.fillCompanyDocumentAndNext();
 
         String apostillePath = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
         File apostilleFile = new File(apostillePath);

@@ -93,7 +93,7 @@ public class Panama_MaintainCompany_Step5 extends BasePage {
 
     public void setPanamaMaintainCompanyStep5() throws InterruptedException {
         CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocument();
+        companyDocument.fillCompanyDocumentAndNext();
 
         String aspostillePath = ConfigReader.getResourceFilePath(Constant.DOCUMENT_IMAGE_PATH);
         File aspostilleFile = new File(aspostillePath);

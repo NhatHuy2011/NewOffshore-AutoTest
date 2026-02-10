@@ -20,6 +20,7 @@ public class Panama_RestoreCompany_Service extends BasePage {
     public void selectRestoreCompany(){
         selectButton("struck_off_status_less_6_months");
         sendCustomRequest("struck_off_status_less_6_months", "Test");
+        selectButton("struck_off_status_less_6_months");
         selectButton("singapore-apply-form-next");
     }
 }
