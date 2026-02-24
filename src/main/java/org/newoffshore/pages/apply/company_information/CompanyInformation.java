@@ -46,12 +46,76 @@ public class CompanyInformation extends BasePage {
         click(companyInfoNextButton);
     }
 
-    public void fillCompanyInformation() {
-        sendKeyCompanyName("Cong Ty Co Phan The One Digi");
+    public void fillCompanyInformation_Singapore() {
+        sendKeyCompanyName("The One Digi Singapore");
         sendKeyBusinessDescription("Tourism, Retail");
         sendKeyShareCapital("10000");
         selectCountryOfOperation("Vietnam");
         sendKeySSICCode("1234, 2345");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_HongKong() {
+        sendKeyCompanyName("The One Digi HongKong");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_USA() {
+        sendKeyCompanyName("The One Digi USA");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_BVI() {
+        sendKeyCompanyName("The One Digi BVI");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_Seychelles() {
+        sendKeyCompanyName("The One Digi Seychelles");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_Cayman() {
+        sendKeyCompanyName("The One Digi Cayman");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_Marshall() {
+        sendKeyCompanyName("The One Digi Marshall");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_Panama() {
+        sendKeyCompanyName("The One Digi Panama");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
+        selectNextButton();
+    }
+
+    public void fillCompanyInformation_Nevis() {
+        sendKeyCompanyName("The One Digi Nevis");
+        sendKeyBusinessDescription("Tourism, Retail");
+        sendKeyShareCapital("10000");
+        selectCountryOfOperation("Vietnam");
         selectNextButton();
     }
 }
