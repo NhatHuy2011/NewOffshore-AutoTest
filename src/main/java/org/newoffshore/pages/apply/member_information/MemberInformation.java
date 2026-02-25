@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class MemberInformation extends BasePage {
     public MemberInformation(WebDriver driver) {
         super(driver);
@@ -69,7 +71,8 @@ public class MemberInformation extends BasePage {
     }
 
     public void clickSubmitButton(){
-        scrollToElementAndClick(submitButton);
+        List<WebElement> submitButtons = driver.findElements(submitButton);
+        submitButtons.get(1).click();
     }
 
     public void selectGroupService(String id){
