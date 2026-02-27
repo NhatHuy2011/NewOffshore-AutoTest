@@ -6,6 +6,7 @@ public class Constant {
     public static final String HONGKONG = "hong-kong";
     public static final String USA = "usa";
     public static final String PANAMA = "panama";
+    public static final String BVI = "bvi";
     public static final String DOCUMENT_IMAGE_PATH = "document.jpg";
     public static final String PASSPORT_IMAGE_PATH = "passport.jpg";
     public static final String SELFIE_IMAGE_PATH = "selfie.png";
