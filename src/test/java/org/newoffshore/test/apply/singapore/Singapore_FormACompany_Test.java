@@ -32,32 +32,32 @@ public class Singapore_FormACompany_Test {
 
         driver.manage().addCookie(userSession);
 
-        driver.get("https://global-offshore.org/en/singapore/company-info/OD_2Y6145S");
+        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
         driver.navigate().refresh();
     }
 
     //Form A Company
     @Test
     public void selectIncorp_For_Local(){
-//        //Contact Information
-//        ContactInformation contactInformationPage = new ContactInformation(driver);
-//        contactInformationPage.fillContactInformation();
-//
-//        //Speak And Checkout
-//        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-//        speakAndCheckout.selectCheckOut();
-//
-//        //Select Group Of Service
-//        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
-//        singaporeGroupOfService.selectGroupFormACompany();
-//
-//        //Select Service Detail
-//        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
-//        formACompanyServiceDetail.selectIncorp_For_Local();
-//
-//        //Select Payment Method
-//        PaymentInformation paymentInformation = new PaymentInformation(driver);
-//        paymentInformation.fillPaymentInformation();
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
+
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Select Group Of Service
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupFormACompany();
+
+        //Select Service Detail
+        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
+        formACompanyServiceDetail.selectIncorp_For_Local();
+
+        //Select Payment Method
+        PaymentInformation paymentInformation = new PaymentInformation(driver);
+        paymentInformation.fillPaymentInformation();
 
         //Fill Company Information
         CompanyInformation companyInformation = new CompanyInformation(driver);
