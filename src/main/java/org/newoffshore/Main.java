@@ -1,17 +1,23 @@
 package org.newoffshore;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        JFrame frame = new JFrame("Auto Test Tool");
+        frame.setSize(400, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        JButton runBtn = new JButton("Run Selenium Test");
+        runBtn.setBounds(100, 50, 200, 40);
+
+        JTextArea result = new JTextArea();
+        result.setBounds(50, 110, 300, 80);
+
+        frame.add(runBtn);
+        frame.add(result);
+
+        frame.setVisible(true);
     }
 }

@@ -4,11 +4,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
+import org.newoffshore.pages.apply.company_information.CompanyInformation;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
+import org.newoffshore.pages.apply.member_information.MemberInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
+import org.newoffshore.pages.apply.service.bvi.BVI_CompanyManagementTransfer_Service;
 import org.newoffshore.pages.apply.service.bvi.BVI_GroupOfService;
-import org.newoffshore.pages.apply.service.bvi.BVI_ShelfCompany_Service;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +18,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class BVI_ShelfCompanyService_Test {
+public class BVI_CompanyManagementTransfer_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -35,7 +37,7 @@ public class BVI_ShelfCompanyService_Test {
     }
 
     @Test
-    public void selectShelfCompanyService(){
+    public void selectCompanyManagementTransferService(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -46,14 +48,22 @@ public class BVI_ShelfCompanyService_Test {
 
         //Service Detail
         BVI_GroupOfService bviGroupOfService = new BVI_GroupOfService(driver);
-        bviGroupOfService.selectGroupShelfCompany();
+        bviGroupOfService.selectGroupCompanyManagementTransfer();
 
-        BVI_ShelfCompany_Service bviShelfCompanyService = new BVI_ShelfCompany_Service(driver);
-        bviShelfCompanyService.selectShelfCompanyService();
+        BVI_CompanyManagementTransfer_Service bviCompanyManagementTransferService = new BVI_CompanyManagementTransfer_Service(driver);
+        bviCompanyManagementTransferService.selectCompanyManagementTransferService();
 
         //Payment
         PaymentInformation paymentInformation = new PaymentInformation(driver);
-        paymentInformation.fillPaymentNotSelectMethod();
+        paymentInformation.fillPaymentInformation();
+
+        //Company Information
+        CompanyInformation companyInformation = new CompanyInformation(driver);
+        companyInformation.fillCompanyInformation_BVI();
+
+        //Member Information
+        MemberInformation memberInformation = new MemberInformation(driver);
+        memberInformation.fillMemberInformation();
     }
 
     @AfterEach

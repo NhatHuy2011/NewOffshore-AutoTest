@@ -11,6 +11,8 @@ public class PaymentInformation extends BasePage {
 
     private final By termAndPrivacyButton = By.id("accept");
 
+    private final By agreeTermButton = By.xpath("//button[normalize-space() = 'Agree and Continue']");
+
     private final By proceedToPaymentButton = By.cssSelector("button[type='submit']");
 
     private final By completePaymentButton = By.xpath("//button[normalize-space() = 'I’ve Completed the Payment']");
@@ -23,6 +25,10 @@ public class PaymentInformation extends BasePage {
         click(termAndPrivacyButton);
     }
 
+    public void selectAgreeTerm(){
+        click(agreeTermButton);
+    }
+
     public void selectProceedToPayment(){
         click(proceedToPaymentButton);
     }
@@ -32,8 +38,9 @@ public class PaymentInformation extends BasePage {
     }
 
     public void fillPaymentInformation(){
+        selectAgreeTerm();
         selectPaymentMethod("transfer");
-        selectTermAndPrivacy();
+        //selectTermAndPrivacy();
         selectProceedToPayment();
         selectCompletedPayment();
     }

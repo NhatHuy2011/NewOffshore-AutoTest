@@ -74,18 +74,11 @@ public class MemberInformation extends BasePage {
         submitButtons.get(1).click();
     }
 
-    public void selectGroupService(String id){
-        click((By.cssSelector(("label[for='"+ id +"']"))));
-    }
-
     public void fillMemberInformation(){
         selectTypeOfMember("Individual");
-        selectGroupService("members.0.director");
-        selectGroupService("members.0.shareholder");
-        selectGroupService("members.0.owner");
-//        selectPositionDirector();
-//        selectPositionShareholder();
-//        selectPositionUBO();
+        selectPositionDirector();
+        selectPositionShareholder();
+        selectPositionUBO();
         setFullNameInput("Nhat Huy");
         setEmailInput("huydt04082003@gmail.com");
         setPhoneInput("2015550123");

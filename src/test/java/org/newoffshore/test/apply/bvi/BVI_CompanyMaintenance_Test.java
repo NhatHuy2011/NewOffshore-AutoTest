@@ -7,8 +7,8 @@ import org.newoffshore.constant.Constant;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
+import org.newoffshore.pages.apply.service.bvi.BVI_CompanyRenewal_Service;
 import org.newoffshore.pages.apply.service.bvi.BVI_GroupOfService;
-import org.newoffshore.pages.apply.service.bvi.BVI_ShelfCompany_Service;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class BVI_ShelfCompanyService_Test {
+public class BVI_CompanyMaintenance_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -35,7 +35,7 @@ public class BVI_ShelfCompanyService_Test {
     }
 
     @Test
-    public void selectShelfCompanyService(){
+    public void selectCompanyRenewalService(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -46,14 +46,14 @@ public class BVI_ShelfCompanyService_Test {
 
         //Service Detail
         BVI_GroupOfService bviGroupOfService = new BVI_GroupOfService(driver);
-        bviGroupOfService.selectGroupShelfCompany();
+        bviGroupOfService.selectGroupCompanyMaintenance();
 
-        BVI_ShelfCompany_Service bviShelfCompanyService = new BVI_ShelfCompany_Service(driver);
-        bviShelfCompanyService.selectShelfCompanyService();
+        BVI_CompanyRenewal_Service bviCompanyRenewalService = new BVI_CompanyRenewal_Service(driver);
+        bviCompanyRenewalService.selectCompanyRenewal();
 
         //Payment
         PaymentInformation paymentInformation = new PaymentInformation(driver);
-        paymentInformation.fillPaymentNotSelectMethod();
+        paymentInformation.fillPaymentInformation();
     }
 
     @AfterEach
