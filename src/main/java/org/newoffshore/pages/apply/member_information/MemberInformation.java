@@ -14,11 +14,11 @@ public class MemberInformation extends BasePage {
 
     private final By typeOfMemberButton = By.id("members.0.type");
 
-    private final By positionDirectorButton = By.id("members.0.director");
+    private final By positionDirectorButton = By.xpath("//h5[text()='Director']/following::button[@role='checkbox'][1]");
 
-    private final By positionShareholderButton = By.id("members.0.shareholder");
+    private final By positionShareholderButton = By.xpath("//h5[text()='Shareholder']/following::button[@role='checkbox'][1]");
 
-    private final By positionUBOButton = By.id("members.0.owner");
+    private final By positionUBOButton = By.xpath("//h5[text()='Owner']/following::button[@role='checkbox'][1]");
 
     private final By fullNameInput = By.name("members.0..member.name");
 

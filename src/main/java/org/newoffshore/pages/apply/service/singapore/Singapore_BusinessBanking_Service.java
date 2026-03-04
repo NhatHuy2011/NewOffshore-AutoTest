@@ -10,13 +10,17 @@ public class Singapore_BusinessBanking_Service extends BasePage {
     }
 
     public void selectButton(String id){
-        click(By.id(id));
+        click(By.cssSelector("label[for='" + id +"']"));
+    }
+
+    public void clickSubmit(){
+        click(By.id("singapore-apply-form-next"));
     }
 
     public void selectBusinessBanking(){
         selectButton("digital");
         selectButton("traditional");
         selectButton("payment_gateway");
-        selectButton("singapore-apply-form-next");
+        clickSubmit();
     }
 }

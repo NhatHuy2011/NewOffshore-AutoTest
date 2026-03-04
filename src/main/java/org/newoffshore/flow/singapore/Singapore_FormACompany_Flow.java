@@ -1,15 +1,12 @@
-package org.newoffshore.test.apply.singapore;
+package org.newoffshore.flow.singapore;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.newoffshore.constant.Constant;
-import org.newoffshore.pages.apply.company_information.CompanyDocument;
+import org.newoffshore.pages.apply.company_information.CompanyInformation;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.member_information.MemberInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.Singapore_CompanyManagementTransfer_Service;
+import org.newoffshore.pages.apply.service.singapore.Singapore_FormACompany_Service;
 import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
@@ -18,26 +15,33 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_CompanyManagementTransfer_Test {
+public class Singapore_FormACompany_Flow {
     private WebDriver driver;
 
-    @BeforeEach
-    public void setUp(){
+    public void run(){
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get(ConfigReader.getUrl());
 
-        Cookie userSession = new Cookie(ConfigReader.getCookiesAccessTọkenName(), ConfigReader.getCookiesAccessTọkenValue());
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().window().maximize();
+            driver.get(ConfigReader.getUrl());
 
-        driver.manage().addCookie(userSession);
+            Cookie userSession = new Cookie(ConfigReader.getCookiesAccessTọkenName(), ConfigReader.getCookiesAccessTọkenValue());
 
-        driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
-        driver.navigate().refresh();
+            driver.manage().addCookie(userSession);
+
+            driver.get(ConfigReader.getUrlOffer(Constant.SINGAPORE));
+            driver.navigate().refresh();
+
+            selectIncorp_For_Local();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            driver.quit();
+        }
     }
 
-    @Test
-    public void selectTransfer_For_Local_HasAccounting() {
+    private void selectIncorp_For_Local(){
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -48,26 +52,22 @@ public class Singapore_CompanyManagementTransfer_Test {
 
         //Select Group Of Service
         Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
-        singaporeGroupOfService.selectGroupCompanyManagementTransfer();
+        singaporeGroupOfService.selectGroupFormACompany();
 
-        Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
-        companyManagementTransferServiceDetail.selectTransfer_For_Local_HasAccounting();
+        //Select Service Detail
+        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
+        formACompanyServiceDetail.selectIncorp_For_Local();
 
         //Select Payment Method
         PaymentInformation paymentInformation = new PaymentInformation(driver);
         paymentInformation.fillPaymentInformation();
 
         //Fill Company Information
-        CompanyDocument companyDocument = new CompanyDocument(driver);
-        companyDocument.fillCompanyDocumentAndNext();
+        CompanyInformation companyInformation = new CompanyInformation(driver);
+        companyInformation.fillCompanyInformation_Singapore();
 
         //Member Information
         MemberInformation memberInformation = new MemberInformation(driver);
         memberInformation.fillMemberInformation();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
     }
 }

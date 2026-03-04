@@ -38,7 +38,7 @@ public class Singapore_MaintainCompanyCompany_Test {
 
     //Maintain Company
     @Test
-    public void selectMaintain_For_Local_NoAccounting() throws InterruptedException {
+    public void selectMaintain_For_Local_NoAccounting() {
         //Contact Information
         ContactInformation contactInformationPage = new ContactInformation(driver);
         contactInformationPage.fillContactInformation();
@@ -66,17 +66,6 @@ public class Singapore_MaintainCompanyCompany_Test {
         Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
         maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
     }
-
-//    @Test
-//    public void testCompanyMember() throws InterruptedException {
-//        //Select Company
-//        SelectCompany selectCompany = new SelectCompany(driver);
-//        selectCompany.selectCompanyAndNext("The One Digi Singapore");
-//
-//        //Fill Company Info
-//        Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
-//        maintainCompanyCompanyInfo.setSingaporeMaintainCompanyStep5();
-//    }
 
     @AfterEach
     public void tearDown() {

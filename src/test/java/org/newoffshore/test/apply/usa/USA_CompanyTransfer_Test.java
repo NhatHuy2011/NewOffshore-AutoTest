@@ -1,4 +1,4 @@
-package org.newoffshore.test.apply.singapore;
+package org.newoffshore.test.apply.usa;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,8 +9,9 @@ import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.member_information.MemberInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.singapore.Singapore_FormACompany_Service;
-import org.newoffshore.pages.apply.service.singapore.Singapore_GroupOfService;
+import org.newoffshore.pages.apply.service.usa.USA_CompanyManagementTransfer_Service;
+import org.newoffshore.pages.apply.service.usa.USA_FormACompany_Service;
+import org.newoffshore.pages.apply.service.usa.USA_GroupOfService;
 import org.newoffshore.utils.ConfigReader;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_FormACompany_Test {
+public class USA_CompanyTransfer_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -32,36 +33,34 @@ public class Singapore_FormACompany_Test {
 
         driver.manage().addCookie(userSession);
 
-        driver.get("https://global-offshore.org/en/singapore/company-info/OD_F8UD6AL");
+        driver.get(ConfigReader.getUrlOffer(Constant.BVI));
         driver.navigate().refresh();
     }
 
-    //Form A Company
     @Test
-    public void selectIncorp_For_Local(){
-//        //Contact Information
-//        ContactInformation contactInformationPage = new ContactInformation(driver);
-//        contactInformationPage.fillContactInformation();
-//
-//        //Speak And Checkout
-//        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-//        speakAndCheckout.selectCheckOut();
-//
-//        //Select Group Of Service
-//        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
-//        singaporeGroupOfService.selectGroupFormACompany();
-//
-//        //Select Service Detail
-//        Singapore_FormACompany_Service formACompanyServiceDetail = new Singapore_FormACompany_Service(driver);
-//        formACompanyServiceDetail.selectIncorp_For_Local();
-//
-//        //Select Payment Method
-//        PaymentInformation paymentInformation = new PaymentInformation(driver);
-//        paymentInformation.fillPaymentInformation();
+    public void selectCompanyTransfer(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
 
-        //Fill Company Information
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Service Detail
+        USA_GroupOfService usaGroupOfService = new USA_GroupOfService(driver);
+        usaGroupOfService.selectGroupCompanyManagementTransfer();
+
+        USA_CompanyManagementTransfer_Service companyTransferService = new USA_CompanyManagementTransfer_Service(driver);
+        companyTransferService.selectCompanyManagementTransfer();
+
+        //Payment
+        PaymentInformation paymentInformation = new PaymentInformation(driver);
+        paymentInformation.fillPaymentInformation();
+
+        //Company Information
         CompanyInformation companyInformation = new CompanyInformation(driver);
-        companyInformation.fillCompanyInformation_Singapore();
+        companyInformation.fillCompanyInformation_USA();
 
         //Member Information
         MemberInformation memberInformation = new MemberInformation(driver);
