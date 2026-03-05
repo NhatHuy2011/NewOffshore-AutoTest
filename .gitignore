@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target/
 
 application.properties
+*.exe
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
