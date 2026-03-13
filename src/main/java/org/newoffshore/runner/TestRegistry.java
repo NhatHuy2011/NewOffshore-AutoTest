@@ -15,37 +15,37 @@ public final class TestRegistry {
         // ===== Singapore =====
         MAP.put(new TestId("Singapore", "Form A Company"),
                 TestTarget.of("org.newoffshore.flow.singapore.Singapore_FormACompany_Flow",
-                        "run"));
+                        "runFormACompany"));
 
         MAP.put(new TestId("Singapore", "Company Management Transfer"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_CompanyManagementTransfer_Test",
-                        "selectTransfer_For_Local_HasAccounting"));
+                        "runCompanyTransfer"));
 
         MAP.put(new TestId("Singapore", "Company Renewal"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_MaintainCompanyCompany_Test",
-                        "selectMaintain_For_Local_NoAccounting"));
+                        "runCompanyRenewal"));
 
         MAP.put(new TestId("Singapore", "Business Banking"),
                 TestTarget.of("org.newoffshore.flow.singapore.Singapore_BusinessBanking_Flow",
-                        "run"));
+                        "runBusinessBank"));
 
         MAP.put(new TestId("Singapore", "Accounting Services"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_AccountingService_Test",
-                        "selectAccouting"));
+                        "runAccounting"));
 
         MAP.put(new TestId("Singapore", "Commercial Contract"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_CommercialContract_Test",
-                        "selectCommercialContract_Custom",
-                        "selectCommercialContract_Templates"));
+                        "runCommercialContractTemplate",
+                        "runCommercialContractCustom"));
 
         MAP.put(new TestId("Singapore", "Employment Pass"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_EmploymentPass_Test",
-                        "selectEmploymentPass",
-                        "selectDependentPass"));
+                        "runEmploymentPass",
+                        "runDependantPass"));
 
         MAP.put(new TestId("Singapore", "Nominee Directorship"),
                 TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_NomineeService_Test",
-                        "selectNomineeDirectorship"));
+                        "runNomineeService"));
     }
 
     public static Optional<TestTarget> find(String country, String service) {

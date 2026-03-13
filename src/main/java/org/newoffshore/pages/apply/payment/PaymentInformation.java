@@ -13,7 +13,7 @@ public class PaymentInformation extends BasePage {
 
     private final By agreeTermButton = By.xpath("//button[normalize-space() = 'Agree and Continue']");
 
-    private final By proceedToPaymentButton = By.cssSelector("button[type='submit']");
+    private final By proceedToPaymentButton = By.xpath("//button[normalize-space() = 'Proceed to Payment']");
 
     private final By completePaymentButton = By.xpath("//button[normalize-space() = 'I’ve Completed the Payment']");
 
@@ -38,10 +38,10 @@ public class PaymentInformation extends BasePage {
     }
 
     public void fillPaymentInformation(){
-        selectAgreeTerm();
         selectPaymentMethod("transfer");
-        //selectTermAndPrivacy();
         selectProceedToPayment();
+        selectAgreeTerm();
+        //selectTermAndPrivacy();
         selectCompletedPayment();
     }
 

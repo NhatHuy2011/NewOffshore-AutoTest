@@ -3,6 +3,10 @@ package org.newoffshore.pages.apply.company_information;
 import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 
 public class SelectCompany extends BasePage {
     public SelectCompany(WebDriver driver) {
@@ -15,7 +19,9 @@ public class SelectCompany extends BasePage {
 
     public void selectCompanyOption(String companyName){
         click(selectCompanyButton);
-        scrollToElementAndClick(By.xpath("//div[@data-slot='select-item']//span[normalize-space()='" + companyName + "']"));
+        List<WebElement> elements = driver.findElements(By.xpath("(//div[@data-slot='select-item'])[1]"));
+        System.out.println(">>>>>> COMPANY OPTION: " + elements.size());
+        scrollToElementAndClick(By.xpath("(//div[@data-slot='select-item']//span)[1]"));
     }
 
     public void clickNextButton(){

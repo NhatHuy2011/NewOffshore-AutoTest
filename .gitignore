@@ -5,6 +5,7 @@ target/
 
 application.properties
 *.exe
+*.dmg
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
