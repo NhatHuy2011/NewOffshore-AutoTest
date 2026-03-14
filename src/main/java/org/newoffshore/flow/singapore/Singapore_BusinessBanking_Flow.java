@@ -26,7 +26,7 @@ public class Singapore_BusinessBanking_Flow extends BaseFlow {
 
             //Select Company
             SelectCompany selectCompany = new SelectCompany(driver);
-            selectCompany.selectCompanyAndNext("The One Digi Singapore (Form)");
+            selectCompany.selectCompanyAndNext();
         } finally {
             tearDown();
         }

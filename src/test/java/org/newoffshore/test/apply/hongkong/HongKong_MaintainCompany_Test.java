@@ -58,7 +58,7 @@ public class HongKong_MaintainCompany_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi HongKong");
+        selectCompany.selectCompanyAndNext();
 
         HongKong_MaintainCompany_Step5 hongKongStep5 = new HongKong_MaintainCompany_Step5(driver);
         hongKongStep5.setHongKongMaintainCompanyStep5();

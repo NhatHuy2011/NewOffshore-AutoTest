@@ -23,7 +23,7 @@ public class Singapore_AccountingService_Step5 extends BasePage {
 
     public void selectSingaporeAccountingStep5(){
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyNotNext("The One Digi Singapore");
+        selectCompany.selectCompanyNotNext();
         selectButton("yes-annualTaxReturn");
         clickNextButton();
         CompanyDocument companyDocument = new CompanyDocument(driver);

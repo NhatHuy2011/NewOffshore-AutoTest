@@ -56,7 +56,7 @@ public class Panama_NomineeService_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi Panama");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

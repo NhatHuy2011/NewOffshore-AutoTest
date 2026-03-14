@@ -57,7 +57,7 @@ public class HongKong_CloseYourCompany_Test {
         paymentInformation.fillPaymentNotSelectMethod();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi HongKong");
+        selectCompany.selectCompanyAndNext();
 
         HongKong_CloseCompany_Step5 hongkongAccountingStep5 = new HongKong_CloseCompany_Step5(driver);
         hongkongAccountingStep5.selectHongKongAccountingServiceStep5();

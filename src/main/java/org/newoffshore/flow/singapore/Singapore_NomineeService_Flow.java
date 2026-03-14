@@ -26,7 +26,7 @@ public class Singapore_NomineeService_Flow extends BaseFlow {
 
             //Select Company
             SelectCompany selectCompany = new SelectCompany(driver);
-            selectCompany.selectCompanyAndNext("The One Digi Singapore");
+            selectCompany.selectCompanyAndNext();
         } finally {
             tearDown();
         }

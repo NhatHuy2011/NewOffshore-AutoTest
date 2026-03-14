@@ -56,7 +56,7 @@ public class USA_ConversionToDelaware_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi USA");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

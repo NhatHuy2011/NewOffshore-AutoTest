@@ -8,7 +8,6 @@ import org.newoffshore.pages.apply.company_information.SelectCompany;
 import org.newoffshore.pages.apply.contact_information.ContactInformation;
 import org.newoffshore.pages.apply.payment.PaymentInformation;
 import org.newoffshore.pages.apply.service.SpeakAndCheckout;
-import org.newoffshore.pages.apply.service.usa.USA_ConversionToDelaware_Service;
 import org.newoffshore.pages.apply.service.usa.USA_GroupOfService;
 import org.newoffshore.pages.apply.service.usa.USA_ReviveCompany_Service;
 import org.newoffshore.utils.ConfigReader;
@@ -57,7 +56,7 @@ public class USA_ReviveCompany_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi USA");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

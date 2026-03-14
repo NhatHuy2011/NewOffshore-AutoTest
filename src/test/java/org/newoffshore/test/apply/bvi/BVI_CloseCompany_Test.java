@@ -58,7 +58,7 @@ public class BVI_CloseCompany_Test {
 
         //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi BVI");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

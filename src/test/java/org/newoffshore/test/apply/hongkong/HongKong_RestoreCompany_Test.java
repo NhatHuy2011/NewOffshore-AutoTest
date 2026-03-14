@@ -57,7 +57,7 @@ public class HongKong_RestoreCompany_Test {
         paymentInformation.fillPaymentNotSelectMethod();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi HongKong");
+        selectCompany.selectCompanyAndNext();
 
         HongKong_RestoreCompany_Step5 hongKongRestoreStep5 = new HongKong_RestoreCompany_Step5(driver);
         hongKongRestoreStep5.setHongKongRestoreCompany();

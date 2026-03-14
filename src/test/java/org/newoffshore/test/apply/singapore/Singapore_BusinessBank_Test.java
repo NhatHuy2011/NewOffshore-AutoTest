@@ -58,7 +58,7 @@ public class Singapore_BusinessBank_Test {
 
         //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi Singapore");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

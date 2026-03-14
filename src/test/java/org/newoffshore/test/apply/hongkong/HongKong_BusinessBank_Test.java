@@ -56,7 +56,7 @@ public class HongKong_BusinessBank_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi HongKong");
+        selectCompany.selectCompanyAndNext();
     }
 
     @AfterEach

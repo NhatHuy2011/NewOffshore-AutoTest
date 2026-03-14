@@ -59,7 +59,7 @@ public class EmploymentPass_ApplicantInformation extends BasePage {
         selectButton("yes-alreadyCompany");
         selectButton("select-already-company-next");
         SelectCompany companySingapore = new SelectCompany(driver);
-        companySingapore.selectCompanyOption("The One Digi Singapore");
+        companySingapore.selectCompanyOption();
         selectButton("yes-annualTaxReturn");
         selectButton("select-company-next");
         CompanyDocument companyDocument = new CompanyDocument(driver);

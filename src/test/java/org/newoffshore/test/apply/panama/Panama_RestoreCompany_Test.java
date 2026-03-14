@@ -58,7 +58,7 @@ public class Panama_RestoreCompany_Test {
         paymentInformation.fillPaymentInformation();
 
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi Panama");
+        selectCompany.selectCompanyAndNext();
 
         Panama_RestoreCompany panamaRestoreCompany = new Panama_RestoreCompany(driver);
         panamaRestoreCompany.setPanamaRestoreCompany();

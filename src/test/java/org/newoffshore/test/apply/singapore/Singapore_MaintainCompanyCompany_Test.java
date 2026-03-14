@@ -60,7 +60,7 @@ public class Singapore_MaintainCompanyCompany_Test {
 
         //Select Company
         SelectCompany selectCompany = new SelectCompany(driver);
-        selectCompany.selectCompanyAndNext("The One Digi Singapore");
+        selectCompany.selectCompanyAndNext();
 
         //Fill Company Info
         Singapore_MaintainCompany_Step5 maintainCompanyCompanyInfo = new Singapore_MaintainCompany_Step5(driver);
