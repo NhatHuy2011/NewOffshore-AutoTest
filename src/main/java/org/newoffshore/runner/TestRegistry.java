@@ -18,11 +18,11 @@ public final class TestRegistry {
                         "runFormACompany"));
 
         MAP.put(new TestId("Singapore", "Company Management Transfer"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_CompanyManagementTransfer_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_CompanyTransfer_Flow",
                         "runCompanyTransfer"));
 
         MAP.put(new TestId("Singapore", "Company Renewal"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_MaintainCompanyCompany_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_CompanyRenewal_Flow",
                         "runCompanyRenewal"));
 
         MAP.put(new TestId("Singapore", "Business Banking"),
@@ -30,22 +30,51 @@ public final class TestRegistry {
                         "runBusinessBank"));
 
         MAP.put(new TestId("Singapore", "Accounting Services"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_AccountingService_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_Accounting_Flow",
                         "runAccounting"));
 
         MAP.put(new TestId("Singapore", "Commercial Contract"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_CommercialContract_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_CommercialContract_Flow",
                         "runCommercialContractTemplate",
                         "runCommercialContractCustom"));
 
         MAP.put(new TestId("Singapore", "Employment Pass"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_EmploymentPass_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_EmploymentPass_Flow",
                         "runEmploymentPass",
                         "runDependantPass"));
 
         MAP.put(new TestId("Singapore", "Nominee Directorship"),
-                TestTarget.of("org.newoffshore.test.apply.singapore.Singapore_NomineeService_Test",
+                TestTarget.of("org.newoffshore.flow.singapore.Singapore_NomineeService_Flow",
                         "runNomineeService"));
+
+        // ===== HongKong =====
+        MAP.put(new TestId("Hong Kong", "Form A Company"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_FormACompany_Flow",
+                        "runFormACompany"));
+
+        MAP.put(new TestId("Hong Kong", "Company Management Transfer"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_CompanyTransfer_Flow",
+                        "runCompanyTransfer"));
+
+        MAP.put(new TestId("Hong Kong", "Company Renewal"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_CompanyRenewal_Flow",
+                        "runCompanyRenewal"));
+
+        MAP.put(new TestId("Hong Kong", "Business Banking"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_BusinessBanking_Flow",
+                        "runBusinessBank"));
+
+        MAP.put(new TestId("Hong Kong", "Accounting Services"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_AccountingService_Flow",
+                        "runAccountingService"));
+
+        MAP.put(new TestId("Hong Kong", "Close Company"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_CloseCompany_Flow",
+                        "runCloseCompany"));
+
+        MAP.put(new TestId("Hong Kong", "Company Restoration"),
+                TestTarget.of("org.newoffshore.flow.hongkong.HongKong_RestoreCompany_Flow",
+                        "runRestoreCompany"));
     }
 
     public static Optional<TestTarget> find(String country, String service) {

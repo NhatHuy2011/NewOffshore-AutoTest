@@ -31,7 +31,7 @@ public class HongKong_GroupOfService extends BasePage {
 
     //Select Group Of Service - Company Maintenance
     public void selectGroupCompanyMaintenance(){
-        selectGroupService("hk_company_maintenance");
+        selectGroupService("hk_company_renewal");
         selectButton("singapore-apply-form-next");
     }
 

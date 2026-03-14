@@ -31,7 +31,7 @@ public class Singapore_GroupOfService extends BasePage {
 
     //Select Group Of Service - Company Maintenance
     public void selectGroupCompanyMaintenance(){
-        selectGroupService("company_maintenance");
+        selectGroupService("company_renewal");
         selectButton("singapore-apply-form-next");
     }
 
@@ -62,6 +62,18 @@ public class Singapore_GroupOfService extends BasePage {
     //Select Group Of Service - Commercial Contract
     public void selectGroupCommercialContract(){
         selectGroupService("commercial_contracts");
+        selectButton("singapore-apply-form-next");
+    }
+
+    //Select Group Of Service - Close Company
+    public void selectGroupCloseCompany(){
+        selectGroupService("close_company");
+        selectButton("singapore-apply-form-next");
+    }
+
+    //Select Group Of Service - Restore Company
+    public void selectGroupRestoreCompany(){
+        selectGroupService("restore_company");
         selectButton("singapore-apply-form-next");
     }
 }

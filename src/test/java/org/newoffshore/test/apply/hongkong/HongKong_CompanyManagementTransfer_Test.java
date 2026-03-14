@@ -50,7 +50,7 @@ public class HongKong_CompanyManagementTransfer_Test {
 
         //Select Group Of Service
         HongKong_GroupOfService groupOfService = new HongKong_GroupOfService(driver);
-        groupOfService.selectGroupFormACompany();
+        groupOfService.selectGroupCompanyManagementTransfer();
 
         //Select Service Detail
         HongKong_CompanyManagementTransfer_Service transferService = new HongKong_CompanyManagementTransfer_Service(driver);

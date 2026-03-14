@@ -10,7 +10,7 @@ public final class TestDataSeeder {
 
         countryServices.put("Singapore", Arrays.asList(
                 "Form A Company", "Company Management Transfer", "Company Renewal", "Nominee Directorship",
-                "Accounting Services", "Employment Pass", "Commercial Contract", "Business Banking", "Close Company", "Restore Company"
+                "Accounting Services", "Employment Pass", "Commercial Contract", "Business Banking"
         ));
         countryServices.put("Hong Kong", Arrays.asList(
                 "Form A Company", "Company Management Transfer", "Company Renewal", "Company Restoration",

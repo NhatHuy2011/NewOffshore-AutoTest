@@ -16,14 +16,6 @@ public class Singapore_FormACompany_Flow extends BaseFlow {
         try {
             setUp(ConfigReader.getUrl(), ConfigReader.getUrlOffer(Constant.SINGAPORE));
 
-            //Contact Information
-            ContactInformation contactInformationPage = new ContactInformation(driver);
-            contactInformationPage.fillContactInformation();
-
-            //Speak And Checkout
-            SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
-            speakAndCheckout.selectCheckOut();
-
             //Select Group Of Service
             Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
             singaporeGroupOfService.selectGroupFormACompany();
