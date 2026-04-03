@@ -11,7 +11,11 @@ public class Singapore_CompanyMaintenance_Service extends BasePage {
 
     private final By customRequestTextArea = By.xpath("//textarea[@data-slot='textarea' and @placeholder='Please enter a description here']");
 
-    public void selectButton(String id){
+    public void selectByLabel(String label){
+        click(By.cssSelector("label[for='" + label +"']"));
+    }
+
+    public void selectById(String id){
         click(By.id(id));
     }
 
@@ -20,20 +24,20 @@ public class Singapore_CompanyMaintenance_Service extends BasePage {
     }
 
     public void selectMaintain_For_Local_NoAccounting(){
-        selectButton("yes_local_director_for_renew");
-        selectButton("singapore-apply-form-next");
+        selectById("yes_local_director_for_renew");
+        selectById("singapore-apply-form-next");
         //selectButton("appointment_director");
         //selectButton("resignation_director");
         //selectButton("update_director_shareholder_information");
-        selectButton("change_business_activity");
-        selectButton("change_company_name");
-        selectButton("change_office_address");
-        selectButton("increase_share_capital");
+        selectByLabel("change_business_activity");
+        selectByLabel("change_company_name");
+        selectByLabel("change_office_address");
+        selectByLabel("increase_share_capital");
         //selectButton("transfer_shares");
-        selectButton("extra_kyc_requirement");
-        selectButton("custom_request");
+        selectByLabel("extra_kyc_requirement");
+        selectByLabel("custom_request");
         sendKeyCustomRequestMaintain("Test");
-        selectButton("singapore-apply-form-next");
-        selectButton("singapore-apply-form-next");
+        selectByLabel("singapore-apply-form-next");
+        selectByLabel("singapore-apply-form-next");
     }
 }

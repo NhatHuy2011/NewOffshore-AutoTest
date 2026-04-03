@@ -4,8 +4,8 @@ import org.newoffshore.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Singapore_CloseCompany_Service extends BasePage {
-    public Singapore_CloseCompany_Service(WebDriver driver) {
+public class Singapore_RestoreCompany_Service extends BasePage {
+    public Singapore_RestoreCompany_Service(WebDriver driver) {
         super(driver);
     }
 
@@ -27,7 +27,7 @@ public class Singapore_CloseCompany_Service extends BasePage {
         click(nextButton);
     }
 
-    public void selectCloseCompany(){
+    public void selectRestoreCompany(){
         clickCancelTerm();
         inputRequest("Test");
         clickNextButton();

@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Singapore_SeviceDetail_Test {
+public class Singapore_ServiceDetail_Test {
     private WebDriver driver;
 
     @BeforeEach
@@ -123,6 +123,7 @@ public class Singapore_SeviceDetail_Test {
         Singapore_CompanyManagementTransfer_Service companyManagementTransferServiceDetail = new Singapore_CompanyManagementTransfer_Service(driver);
         companyManagementTransferServiceDetail.selectTransfer_For_NoLocal();
     }
+
 
     //Company Maintenance
     @Test
@@ -254,6 +255,42 @@ public class Singapore_SeviceDetail_Test {
 
         Singapore_CommercialContract_Service commercialContractServiceDetail = new Singapore_CommercialContract_Service(driver);
         commercialContractServiceDetail.selectCommercialContract_Custom();
+    }
+
+    @Test
+    public void selectCloseCompany(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
+
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Select Group Of Service
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupCloseCompany();
+
+        Singapore_CloseCompany_Service closeCompanyService = new Singapore_CloseCompany_Service(driver);
+        closeCompanyService.selectCloseCompany();
+    }
+
+    @Test
+    public void selectRestoreCompany(){
+        //Contact Information
+        ContactInformation contactInformationPage = new ContactInformation(driver);
+        contactInformationPage.fillContactInformation();
+
+        //Speak And Checkout
+        SpeakAndCheckout speakAndCheckout = new SpeakAndCheckout(driver);
+        speakAndCheckout.selectCheckOut();
+
+        //Select Group Of Service
+        Singapore_GroupOfService singaporeGroupOfService = new Singapore_GroupOfService(driver);
+        singaporeGroupOfService.selectGroupRestoreCompany();
+
+        Singapore_RestoreCompany_Service restoreCompanyService = new Singapore_RestoreCompany_Service(driver);
+        restoreCompanyService.selectRestoreCompany();
     }
 
     @Test

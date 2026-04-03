@@ -24,7 +24,7 @@ public class Singapore_EmploymentPass_Service extends BasePage {
     public void selectCancel(){
         click(cancelGoogleCalendarButton);
     }
-
+    
     public void selectEmploymentPass(){
         selectTerm();
         selectButton("employment_pass_for_owner_company");
